@@ -20,7 +20,7 @@ const poppins = Poppins({
 
 export const metadata = {
   title: "The Cannon",
-  description: "Website for UofT's magazine, The Cannon",
+  description: "Official website for UofT's magazine, The Cannon",
 };
 
 export default function RootLayout({ children }) {
