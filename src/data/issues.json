@@ -1,6 +1,5 @@
 [
     {
-        "id": 1,
         "name": "Connections",
         "volume": "XLVIII",
         "issue": "Summer 2T5",
@@ -8,7 +7,6 @@
         "thumbnail": "thumbnails/connections.png"
     },
     {
-        "id": 2,
         "name": "",
         "volume": "",
         "issue": "",
