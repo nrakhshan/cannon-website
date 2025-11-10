@@ -7,6 +7,7 @@
   --secondary: #EAEEF3;
   --invert: #ffffff;
   --accent: #FFC809;
+  --highlight: #0C3268;
 }
 
 /* @theme inline {
@@ -46,11 +47,27 @@ body {
   background-color: var(--base);
 }
 
+.hover-text-base:hover {
+  color: var(--base);
+}
+
+.hover-bg-base:hover {
+  background-color: var(--base);
+}
+
 .text-accent {
   color: var(--accent);
 }
 
 .bg-accent {
+  background-color: var(--accent);
+}
+
+.hover-text-accent:hover {
+  color: var(--accent);
+}
+
+.hover-bg-accent:hover {
   background-color: var(--accent);
 }
 
@@ -62,10 +79,42 @@ body {
   background-color: var(--secondary);
 }
 
+.hover-text-secondary:hover {
+  color: var(--secondary);
+}
+
+.hover-bg-secondary:hover {
+  background-color: var(--secondary);
+}
+
 .text-invert {
   color: var(--invert);
 }
 
 .bg-invert {
   background-color: var(--invert);
+}
+
+.hover-text-invert:hover {
+  color: var(--invert);
+}
+
+.hover-bg-invert:hover {
+  background-color: var(--invert);
+}
+
+.text-highlight {
+  color: var(--highlight);
+}
+
+.bg-highlight {
+  background-color: var(--highlight);
+}
+
+.hover-text-highlight:hover {
+  color: var(--highlight);
+}
+
+.hover-bg-highlight:hover {
+  background-color: var(--highlight);
 }
