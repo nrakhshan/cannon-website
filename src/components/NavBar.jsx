@@ -1,5 +1,6 @@
 "use client";
 import { React, useState } from 'react';
+import { motion } from 'framer-motion';
 import Logo from '../../public/assets/logo.svg';
 import Menu from '../../public/assets/menu.svg';
 import Close from '../../public/assets/close.svg';
@@ -17,13 +18,16 @@ const NavBar = () => {
 }
 
 const DesktopNav = () => {
+  const linkStyle = "afacad font-semibold text-[20px] text-base hover-text-accent bg-[rgba(255,255,255,0.5)] rounded-full backdrop-blur-xs px-5 py-2";
   return (
-    <div className='hidden lg:flex fixed w-[100%] items-center justify-between top-10 pr-[5%] pl-[5%]'>
-      <Image className="w-15 h-15 " src={Logo} alt="Logo" />
-      <Link href="/" className='afacad font-semibold text-[20px] text-base hover-text-accent'>Home</Link>
-      <Link href="/about" className='afacad font-semibold text-[20px] text-base hover-text-accent'>About</Link>
-      <Link href="/issues" className='afacad font-semibold text-[20px] text-base hover-text-accent'>Issues</Link>
-      <Link href="/contact" className='afacad font-semibold text-[20px] text-base hover-text-accent'>Contact Us</Link>
+    <div className='hidden z-50 lg:flex fixed w-[100%] items-center justify-between top-10 pr-[5%] pl-[5%]'>
+      <Link href="/">
+        <Image className="w-15 h-15 " src={Logo} alt="Logo" />
+      </Link>
+      <Link href="/" className={linkStyle}>Home</Link>
+      <Link href="/about" className={linkStyle}>About</Link>
+      <Link href="/issues" className={linkStyle}>Issues</Link>
+      <Link href="/contact" className={linkStyle}>Contact Us</Link>
       <ButtonRound text="Subscribe" />
     </div>
   )
@@ -34,15 +38,37 @@ const MobileNav = () => {
   const icon = isOpen ? Close : Menu;
   const menuitem = 'afacad pt-5 pb-5 w-full text-center font-semibold text-[20px] text-invert hover-text-accent hover-bg-highlight';
 
+  // transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} transition-all duration-300 ease-in-out
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   return (
     <div className='flex lg:hidden fixed w-[100%] items-center justify-between top-10 pr-[5%] pl-[5%]'>
-      <Image className={`z-50 w-15 h-15 ${isOpen ? 'invert brightness-1' : ''}`} src={Logo} alt="Logo" />
+      <Link href="/" className='z-50' onClick={toggleMenu}>
+        <Image className={`w-15 h-15 ${isOpen ? 'invert brightness-1' : ''}`} src={Logo} alt="Logo" />
+      </Link>
       <Image className="z-50 w-15 h-15 cursor-pointer" src={icon} alt="Menu" onClick={toggleMenu} />
-      <div className={`fixed top-0 right-0 h-full w-full bg-base transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} transition-all duration-300 ease-in-out`}>
+      <motion.div 
+      variants={{
+        initial: {
+          x: '100%'
+        },
+        open: {
+          x: '0%'
+        },
+        close: {
+          x: '100%'
+        }
+      }}
+      transition={{
+        duration: 0.3,
+        ease: "circInOut"
+      }}
+      initial="initial"
+      animate={isOpen ? "open" : "close"}
+      className={`fixed top-0 right-0 h-full w-full bg-base`}>
         <div className='flex flex-col items-center mt-30'>
           <Link href="/" className={menuitem} onClick={toggleMenu}>Home</Link>
           <Link href="/about" className={menuitem} onClick={toggleMenu}>About</Link>
@@ -53,7 +79,7 @@ const MobileNav = () => {
             Copyright © 2025 The Cannon
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   )
 }
