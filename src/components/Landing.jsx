@@ -27,7 +27,7 @@ const Landing = () => {
             The Cannon
         </motion.div>
 
-        <div className='grid place-items-center overflow-clip mb-150 lg:mb-500'>
+        <div className='grid place-items-center overflow-none mb-100 lg:mb-200'>
           <motion.div 
           style={{
               transformStyle: "preserve-3d",
