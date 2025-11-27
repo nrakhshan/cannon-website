@@ -87,6 +87,10 @@ body {
   background-color: var(--secondary);
 }
 
+.focus-bg-secondary:focus, .focus-bg-secondary:active {
+  background-color: var(--secondary);
+}
+
 .text-invert {
   color: var(--invert);
 }

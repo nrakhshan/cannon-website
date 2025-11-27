@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import { motion } from 'framer-motion';
 
@@ -13,7 +14,7 @@ const ButtonRound = ({ text, isHighlight }) => {
         whileHover={{ 
             scale: 1.05,
             color: '#00275C',
-            backgroundColor: isHighlight ? '#FFFFFF' : '#FFC809'
+            backgroundColor: isHighlight ? '#EAEEF3' : '#FFC809'
         }}
         whileTap={{ scale: 0.95 }}
         transition={{ duration: 0.15, ease: "anticipate" }}

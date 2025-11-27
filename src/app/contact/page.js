@@ -2,7 +2,6 @@ import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import ContactForm from "@/components/ContactForm";
 import ButtonRound from '@/components/ButtonRound';
-import Footer from "@/components/Footer";
 
 export default function Contact() {
   return (

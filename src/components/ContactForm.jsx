@@ -8,17 +8,17 @@ const ContactForm = () => {
                 <div>
                     <label className="block my-2">
                         Name: </label>
-                    <input type="text" className="bg-secondary border border-base rounded-full block w-full p-2.5" required />
+                    <input type="text" className="bg-background focus-bg-secondary border border-base rounded-full block w-full p-2.5" required />
                 </div>
                 <div>
                     <label className="block my-2">
                         Email: </label>
-                    <input type="email" className="bg-background border border-base rounded-full block w-full p-2.5" required />
+                    <input type="email" className="bg-background focus-bg-secondary border border-base rounded-full block w-full p-2.5" required />
                 </div>
                 <div >
                     <label className="block my-2">
                         Message: </label>
-                    <textarea rows="6" className="block p-2.5 w-full bg-background rounded-2xl border border-base" />
+                    <textarea rows="6" className="block p-2.5 w-full bg-background focus-bg-secondary rounded-2xl border border-base" />
                 </div>
                 <button type="submit" className="mt-2 p-2 float-right font-semibold uppercase inline-flex items-center gap-2 group">
                     <span>Submit</span>
