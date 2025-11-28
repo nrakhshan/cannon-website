@@ -2,13 +2,61 @@
     {
         "name": "Christina Pizzonia",
         "role": "Editor-in-Chief",
-        "quote": "\"Is it better to speak or to die?\" - Call Me By Your Name (originally from the Heptameron, Tale 10)",
-        "photo": "members/christina_pizzonia.jpg"
+        "quote": "Is it better to speak or to die?",
+        "source": "Call Me By Your Name",
+        "photo": "/members/christina-pizzonia.png"
     },
     {
-        "name": "",
-        "role": "",
-        "quote": "",
-        "photo": ""
+        "name": "Regina Jin",
+        "role": "Graphic Designer",
+        "quote": "Chess is not always about winning. Sometimes it's simply about learning. And so is life.",
+        "speaker": "Manny Pacquiao",
+        "photo": "/members/regina-jin.jpg"
+    },
+    {
+        "name": "Breyanka Lankeswaran",
+        "role": "Web Developer",
+        "quote": "Abandoning your uniqueness is equivalent to dying.",
+        "speaker": "Ryo Yamada",
+        "source": "Bocchi the Rock!",
+        "photo": "/members/breyanka-lankeswaran.png"
+    },
+    {
+        "name": "Juneeta Vangala",
+        "role": "Senior Editor",
+        "quote": "Seeking a great perhaps.",
+        "source": "Looking for Alaska",
+        "photo": "/members/juneeta-vangala.jpg"
+    },
+    {
+        "name": "Justine Gaw",
+        "role": "Junior Editor",
+        "quote": "A page, turning, is a wing lifted with no twin, and therefore no flight. And yet we are moved.",
+        "speaker": "Ocean Vuong",
+        "source": "On Earth We're Briefly Gorgeous",
+        "photo": "/members/justine-gaw.jpg"
+    },
+    {
+        "name": "Linden Zheng",
+        "role": "Web Developer",
+        "quote": "These thieves and lovers and wandering poets—what big lives they had! I began watching everyone I met for secret greatness.",
+        "speaker": "Leif Enger",
+        "source": "I Cheerfully Refuse",
+        "photo": "/members/linden-zheng.jpeg"
+    },
+    {
+        "name": "Meilly Chen",
+        "role": "Staff Writer",
+        "quote": "Is this some kind of twisted joke?!",
+        "speaker": "Dimitri",
+        "source": "Fire Emblem: Three Houses",
+        "photo": "/members/meilly-chen.jpg"
+    },
+    {
+        "name": "Joy Zhou",
+        "role": "Staff Writer",
+        "quote": "two plus two make four",
+        "source": "1984",
+        "photo": "/members/joy-zhou.PNG"
     }
 ]

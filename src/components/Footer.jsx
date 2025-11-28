@@ -13,7 +13,7 @@ const Footer = () => {
 
 const DesktopFooter = () => {
   return (
-    <div className="hidden lg:flex">
+    <div className="hidden lg:flex mt-20">
       <footer className="w-full px-12 pt-12 pb-4 bg-base text-invert afacad">
         <div className="flex justify-between">
           <ul className="space-y-1 text-left">
@@ -46,7 +46,7 @@ const DesktopFooter = () => {
 
 const MobileFooter = () => {
   return (
-    <div className="flex lg:hidden">
+    <div className="flex lg:hidden mt-20">
       <footer className="w-full pt-9 pb-4 bg-base text-invert afacad">
           <ul className="space-y-1 text-center mb-15">
             <div className="flex justify-center space-x-4 mb-12">
