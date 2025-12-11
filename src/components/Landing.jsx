@@ -1,69 +1,63 @@
 'use client';
-import { React }  from 'react'
+import { React, useState, useEffect }  from 'react'
 import { motion } from 'framer-motion';
-import feature from '../data/feature.json';
 import issues from '../data/issues.json';
 import Image from 'next/image';
 
-// const Landing = () => {
-//   const cover = issues[0].thumbnail;
-
-//   return (
-//     <div>
-//       <div >
-
-//       </div>
-//     </div>
-//   )
-// }
-
 const Landing = () => {
-  const cover = issues[0].thumbnail;
+    return (
+        <div className=''>
+            <motion.div 
+            className="cantata text-[14vw] leading-none uppercase text-left w-[70%] m-auto mt-50 z-10">
+                The Cannon
+            </motion.div>
+            <motion.div 
+            className="cantata text-[3vw] leading-none uppercase text-right pr-10 w-[70%] m-auto z-10">
+                EST. 1978
+            </motion.div>
 
-  return (
-    <div className=''>
-        <motion.div 
-        className="cantata text-[14vw] leading-none uppercase text-left w-[70%] m-auto mt-50 z-10">
-            The Cannon
-        </motion.div>
-
-        <div className='grid place-items-center overflow-none mb-100 lg:mb-200'>
-          <motion.div 
-          style={{
-              transformStyle: "preserve-3d",
-              rotateY: "-10deg",
-              rotateX: "30deg",
-              rotateZ: "30deg"
-          }}
-          className='col-start-1 row-start-1 z-20 translate-x-20 grid place-items-center'>
-              <div 
-              style={{
-                  transform: "translateZ(-20px)"
-              }}
-              className='col-start-1 row-start-1 bg-black blur-xs opacity-35 w-[60vw] h-[80vw]'>
-              </div>
-
-              <Image
-                  width={660}
-                  height={880}
-                  src={cover}
-                  alt="Cover Image"
-                  priority
-                  className="col-start-1 row-start-1 w-[60vw] h-[80vw] shadow-md"
-                  style={{
-                      transform: "translateZ(0px)"
-                  }}
-              />
-          </motion.div>
-
-          <div className="w-full overflow-x-hidden col-start-1 row-start-1">
-            <p className="poppins w-[120%] text-[4vw]/[7vw] text-left relative z-10 -translate-x-[10%] mt-15 text-secondary">
-              {feature.map((item) => item.text)}
-            </p>
-          </div>
+            <motion.div 
+            className="afacad text-[clamp(24px,3vw,40px)] font-bold leading-none text-left pl-2 lg:pl-5 w-[70%] m-auto mt-20 mb-10 z-10">
+                Read the latest issue 
+                <img
+                    width="45px"
+                    height="45px"
+                    src="/assets/arrowright.svg"
+                    alt="Cover Image"
+                    className="inline ml-5 rotate-90"
+                />
+            </motion.div>
+            
+            <div className="w-full overflow-x-hidden no-scrollbar mb-50">
+            <motion.div 
+                className='flex mt-20 px-10 gap-4'
+                animate={{ x: ['-100px', `-${((420 + 4*4) * issues.length) + 100}px`] }}
+                transition={{ 
+                    duration: 2 * issues.length, 
+                    repeat: Infinity, 
+                    ease: 'linear' 
+                }}
+            >
+                {[...issues, ...issues].map((item, index) => (
+                    <motion.div 
+                        key={index}
+                        className='flex-shrink-0'
+                    >
+                        <div className="relative overflow-hidden rounded-md w-[420px] h-[540px]">
+                            <Image
+                                src={item.thumbnail}
+                                alt="Cover Image"
+                                fill
+                                className="object-cover pointer-events-none"
+                                draggable={false}
+                            />
+                        </div>
+                    </motion.div>
+                ))}
+            </motion.div>
+            </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default Landing

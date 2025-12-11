@@ -1,3 +1,4 @@
+'use client';
 import React from 'react'
 
 const ContactForm = () => {
@@ -20,7 +21,7 @@ const ContactForm = () => {
                         Message: </label>
                     <textarea rows="6" className="block p-2.5 w-full bg-background focus-bg-secondary rounded-2xl border border-base" />
                 </div>
-                <button type="submit" className="mt-2 p-2 float-right font-semibold uppercase inline-flex items-center gap-2 group">
+                <button type="submit" onClick={() => alert("The form doesn't work yet lol pls just email us")} className="mt-2 p-2 float-right font-semibold uppercase inline-flex items-center gap-2 group">
                     <span>Submit</span>
                     <span className="transition-transform duration-200 group-hover:scale-125">
                       <svg xmlns="http://www.w3.org/2000/svg"

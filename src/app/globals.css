@@ -122,3 +122,11 @@ body {
 .hover-bg-highlight:hover {
   background-color: var(--highlight);
 }
+
+.no-scrollbar {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; 
+}

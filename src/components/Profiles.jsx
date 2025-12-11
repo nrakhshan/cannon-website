@@ -9,7 +9,6 @@ const Profiles = () => {
       <div className="flex flex-wrap gap-20 justify-center items-start w-full lg:px-[6%] pt-24 px-[9%] text-[18px]">
         {members.map((member, index) => (
           <div key={index} className="w-full sm:w-1/3 md:w-1/4 lg:w-1/6 text-center">
-            {/* full-column width image, cropped via object-cover */}
             <div className="w-full relative overflow-hidden rounded-lg shadow-md" style={{ aspectRatio: '3 / 4' }}>
               <Image
                 src={member.photo}

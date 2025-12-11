@@ -1,12 +1,23 @@
+'use client';
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
+import issues from '../../data/issues.json'
+import Carousel from "@/components/Carousel";
+import Title from "@/components/Title";
+import PDFViewer from "@/components/PDFViewer";
+import React, { useState } from 'react'
 
 export default function Issues() {
+  const [issue, setIssue] = useState(0);
+
   return (
     <div className="">
       <NavBar />
-      <div className="cantata text-[14vw] leading-none uppercase text-left w-[70%] m-auto mt-50 z-10">The Cannon</div>
-      <p className="afacad font-bold text-4xl text-center mt-15 mb-50">Issues Page</p>
+      <div className="mt-15 mb-2 w-full lg:px-[6%] pt-24 px-[9%] text-[18px]">
+        <Title>Issues</Title>
+      </div>
+      <Carousel issues={issues} issue={issue} setIssue={setIssue} />
+      <PDFViewer issues={issues} issue={issue} />
       <Footer />
     </div>
   );

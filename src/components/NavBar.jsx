@@ -20,7 +20,7 @@ const NavBar = () => {
 const DesktopNav = () => {
   const linkStyle = "afacad font-semibold text-[20px] text-base hover-text-accent bg-[rgba(255,255,255,0.5)] rounded-full backdrop-blur-xs px-5 py-2";
   return (
-    <div className='hidden z-50 lg:flex fixed w-[100%] items-center justify-between top-10 pr-[5%] pl-[5%]'>
+    <div className='hidden z-100 lg:flex fixed w-[100%] items-center justify-between top-10 pr-[5%] pl-[5%]'>
       <Link href="/">
         <Image className="w-15 h-15 " src={Logo} alt="Logo" />
       </Link>
@@ -46,7 +46,7 @@ const MobileNav = () => {
 
   return (
     <div className='flex lg:hidden fixed w-[100%] items-center justify-between top-10 pr-[5%] pl-[5%]'>
-      <Link href="/" className='z-50' onClick={toggleMenu}>
+      <Link href="/" className='z-100' onClick={toggleMenu}>
         <Image className={`w-15 h-15 ${isOpen ? 'invert brightness-1' : ''}`} src={Logo} alt="Logo" />
       </Link>
       <Image className="z-50 w-15 h-15 cursor-pointer" src={icon} alt="Menu" onClick={toggleMenu} />

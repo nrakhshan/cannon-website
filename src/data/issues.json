@@ -1,16 +1,74 @@
 [
     {
+        "name": "Mysteries",
+        "volume": "XLVIII",
+        "issue": "Fall 2T5",
+        "file": "/issues/2t5-november.pdf",
+        "thumbnail": "/thumbnails/mysteries.png",
+        "doublepage": false
+    },
+    {
         "name": "Connections",
         "volume": "XLVIII",
         "issue": "Summer 2T5",
-        "file": "issues/2t5-july.pdf",
-        "thumbnail": "/thumbnails/Connections.png"
+        "file": "/issues/2t5-july.pdf",
+        "thumbnail": "/thumbnails/connections.png",
+        "doublepage": false
     },
     {
-        "name": "",
-        "volume": "",
-        "issue": "",
-        "file": "",
-        "thumbnail": ""
+        "name": "Requiem",
+        "volume": "XLVII",
+        "issue": "Winter 2T5",
+        "file": "/issues/2t5-april.pdf",
+        "thumbnail": "/thumbnails/requiem.png",
+        "doublepage": false
+    },
+    {
+        "name": "Style",
+        "volume": "XLVII",
+        "issue": "Fall 2T4",
+        "file": "/issues/2t4-november.pdf",
+        "thumbnail": "/thumbnails/style.png",
+        "doublepage": true
+    },
+    {
+        "name": "Legends",
+        "volume": "XLVII",
+        "issue": "Summer 2T4",
+        "file": "/issues/2t4-august.pdf",
+        "thumbnail": "/thumbnails/legends.png",
+        "doublepage": false
+    },
+    {
+        "name": "Nature",
+        "volume": "XLVI",
+        "issue": "Spring 2T4",
+        "file": "/issues/2t4-april.pdf",
+        "thumbnail": "/thumbnails/nature.png",
+        "doublepage": true
+    },
+    {
+        "name": "Metamorphosis",
+        "volume": "XLVI",
+        "issue": "Winter 2T4",
+        "file": "/issues/2t3-november.pdf",
+        "thumbnail": "/thumbnails/metamorphosis.png",
+        "doublepage": false
+    },
+    {
+        "name": "Space",
+        "volume": "XLVI",
+        "issue": "Summer 2T3",
+        "file": "/issues/2t3-august.pdf",
+        "thumbnail": "/thumbnails/space.png",
+        "doublepage": false
+    },
+    {
+        "name": "Food",
+        "volume": "XLV",
+        "issue": "Winter 2T3",
+        "file": "/issues/2t2-november.pdf",
+        "thumbnail": "/thumbnails/food.png",
+        "doublepage": true
     }
 ]
