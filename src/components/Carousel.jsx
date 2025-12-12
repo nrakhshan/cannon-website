@@ -57,7 +57,7 @@ const Carousel = ({ issues, issue, setIssue, className }) => {
 
 return (
     <div className={className}>
-        <div className="flex gap-0 justify-between items-center mx-[9%] lg:mx-[6%]">
+        <div className="flex gap-4 justify-between items-center mx-[9%] lg:mx-[6%]">
             <button
                 aria-label="scroll left"
                 className="flex-shrink-0 cursor-pointer"
@@ -68,7 +68,7 @@ return (
 
             <div
                 ref={scrollerRef}
-                className="flex-grow flex pl-9 pr-9 flex-nowrap overflow-x-auto gap-20 justify-between items-start no-scrollbar cursor-grab"
+                className="flex-grow flex pl-5 pr-5 flex-nowrap overflow-x-auto gap-20 justify-between items-start no-scrollbar cursor-grab"
                 style={{ touchAction: 'pan-y' }}
                 onPointerDown={onPointerDown}
                 onPointerMove={onPointerMove}
@@ -109,7 +109,7 @@ return (
 
             <button
                 aria-label="scroll right"
-                className="flex-shrink-0 cursor-pointer right-0"
+                className="flex-shrink-0 cursor-pointer"
                 onClick={() => scrollRight(scrollerRef.current, 310)}
             >
                 <img src="assets/arrowright.svg" alt="Right Arrow" />

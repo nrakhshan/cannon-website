@@ -7,21 +7,6 @@
         "photo": "/members/christina-pizzonia.png"
     },
     {
-        "name": "Regina Jin",
-        "role": "Graphic Designer",
-        "quote": "Chess is not always about winning. Sometimes it's simply about learning. And so is life.",
-        "speaker": "Manny Pacquiao",
-        "photo": "/members/regina-jin.jpg"
-    },
-    {
-        "name": "Breyanka Lankeswaran",
-        "role": "Web Developer",
-        "quote": "Abandoning your uniqueness is equivalent to dying.",
-        "speaker": "Ryo Yamada",
-        "source": "Bocchi the Rock!",
-        "photo": "/members/breyanka-lankeswaran.png"
-    },
-    {
         "name": "Juneeta Vangala",
         "role": "Senior Editor",
         "quote": "Seeking a great perhaps.",
@@ -37,14 +22,6 @@
         "photo": "/members/justine-gaw.jpg"
     },
     {
-        "name": "Linden Zheng",
-        "role": "Web Developer",
-        "quote": "These thieves and lovers and wandering poets—what big lives they had! I began watching everyone I met for secret greatness.",
-        "speaker": "Leif Enger",
-        "source": "I Cheerfully Refuse",
-        "photo": "/members/linden-zheng.jpeg"
-    },
-    {
         "name": "Meilly Chen",
         "role": "Staff Writer",
         "quote": "Is this some kind of twisted joke?!",
@@ -58,5 +35,28 @@
         "quote": "two plus two make four",
         "source": "1984",
         "photo": "/members/joy-zhou.PNG"
+    },
+    {
+        "name": "Regina Jin",
+        "role": "Graphic Designer",
+        "quote": "Chess is not always about winning. Sometimes it's simply about learning. And so is life.",
+        "speaker": "Manny Pacquiao",
+        "photo": "/members/regina-jin.jpg"
+    },
+    {
+        "name": "Nusaiba Rakhshan",
+        "role": "Web Developer",
+        "quote": "It takes time to build a cage large enough to trick a wolf into believing it's free.",
+        "speaker": "Joseph Vayezid",
+        "source": "The Stellar Swordmaster",
+        "photo": "/members/nusaiba-rakhshan.JPG"
+    },
+    {
+        "name": "Linden Zheng",
+        "role": "Web Developer",
+        "quote": "These thieves and lovers and wandering poets—what big lives they had! I began watching everyone I met for secret greatness.",
+        "speaker": "Leif Enger",
+        "source": "I Cheerfully Refuse",
+        "photo": "/members/linden-zheng.jpeg"
     }
 ]

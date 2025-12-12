@@ -8,16 +8,16 @@ const Landing = () => {
     return (
         <div className=''>
             <motion.div 
-            className="cantata text-[14vw] leading-none uppercase text-left w-[70%] m-auto mt-50 z-10">
+            className="cantata text-[14vw] leading-none uppercase text-left w-[70%] m-auto mt-50">
                 The Cannon
             </motion.div>
             <motion.div 
-            className="cantata text-[3vw] leading-none uppercase text-right pr-10 w-[70%] m-auto z-10">
+            className="cantata text-[3vw] leading-none uppercase text-right pr-10 w-[70%] m-auto">
                 EST. 1978
             </motion.div>
 
             <motion.div 
-            className="afacad text-[clamp(24px,3vw,40px)] font-bold leading-none text-left pl-2 lg:pl-5 w-[70%] m-auto mt-20 mb-10 z-10">
+            className="afacad text-[clamp(24px,3vw,40px)] font-bold leading-none text-left pl-2 lg:pl-5 w-[70%] m-auto mt-20 mb-10">
                 Read the latest issue 
                 <img
                     width="45px"

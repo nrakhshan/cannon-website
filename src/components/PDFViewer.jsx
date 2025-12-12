@@ -73,7 +73,7 @@ const DesktopPDFViewer = ({ issues, issue = 0, className = "" }) => {
   };
 
   return (
-    <div ref={containerRef} className={`z-1 mt-20 relative w-[90%] mx-auto ${className}`}> 
+    <div ref={containerRef} className={`mt-20 relative w-[90%] mx-auto ${className}`}> 
       <Document
         className='bg-secondary rounded-lg flex justify-center'
         file={issues[issue].file}
@@ -83,7 +83,7 @@ const DesktopPDFViewer = ({ issues, issue = 0, className = "" }) => {
         {pageNumber + 1 < numPages && !doublePage && pageNumber != 1 && (containerWidth > 600) && <Page pageNumber={pageNumber + 1} width={pageRenderWidth} className="m-0 p-0 my-2" renderMode="canvas" />}
       </Document>
 
-      <div className="absolute inset-0 pointer-events-none z-20">
+      <div className="absolute inset-0 pointer-events-none">
         <div
           role="button"
           tabIndex={0}

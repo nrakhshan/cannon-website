@@ -23,7 +23,7 @@ const Landing = () => {
   return (
     <div className=''>
         <motion.div 
-        className="cantata text-[14vw] leading-none uppercase text-left w-[70%] m-auto mt-50 z-10">
+        className="cantata text-[14vw] leading-none uppercase text-left w-[70%] m-auto mt-50">
             The Cannon
         </motion.div>
 
@@ -35,7 +35,7 @@ const Landing = () => {
               // rotateX: "30deg",
               // rotateZ: "30deg"
           }}
-          className='col-start-1 row-start-1 z-20 translate-x-20 grid place-items-center'>
+          className='col-start-1 row-start-1 translate-x-20 grid place-items-center'>
               <Image
                   width={660}
                   height={880}
@@ -50,7 +50,7 @@ const Landing = () => {
           </motion.div>
 
           <div className="w-full overflow-x-hidden col-start-1 row-start-1">
-            <p className="poppins w-[120%] text-[4vw]/[7vw] text-left relative z-10 -translate-x-[10%] mt-15 text-secondary">
+            <p className="poppins w-[120%] text-[4vw]/[7vw] text-left relative -translate-x-[10%] mt-15 text-secondary">
               {feature.map((item) => item.text)}
             </p>
           </div>
