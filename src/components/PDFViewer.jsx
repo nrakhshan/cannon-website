@@ -83,7 +83,7 @@ const DesktopPDFViewer = ({ issues, issue = 0, className = "" }) => {
         {pageNumber + 1 < numPages && !doublePage && pageNumber != 1 && (containerWidth > 600) && <Page pageNumber={pageNumber + 1} width={pageRenderWidth} className="m-0 p-0 my-2" renderMode="canvas" />}
       </Document>
 
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none z-20">
         <div
           role="button"
           tabIndex={0}
