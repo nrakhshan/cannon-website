@@ -1,15 +1,42 @@
-'use client';
-import React, { useState, useEffect, useRef } from "react";
-import { Document, Page, pdfjs } from "react-pdf";
+"use client";
+
+import { useState, useEffect, useRef } from "react";
+import dynamic from "next/dynamic";
+
 import "react-pdf/dist/Page/TextLayer.css"; 
 import "react-pdf/dist/Page/AnnotationLayer.css"; 
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  'pdfjs-dist/build/pdf.worker.min.mjs',
-  import.meta.url,
-).toString();
+// Dynamically load Document and Page — this prevents SSR from running PDF.js
+const Document = dynamic(
+  () => import("react-pdf").then((mod) => mod.Document),
+  { ssr: false }
+);
+
+const Page = dynamic(
+  () => import("react-pdf").then((mod) => mod.Page),
+  { ssr: false }
+);
 
 const PDFViewer = ({ issues, issue = 0, className = "" }) => {
+  const [pdfjs, setPdfjs] = useState(null);
+
+  useEffect(() => {
+    // Load pdfjs after the component mounts (browser only)
+    import("react-pdf").then((mod) => {
+      const pdfjsInstance = mod.pdfjs;
+
+      pdfjsInstance.GlobalWorkerOptions.workerSrc = new URL(
+        "pdfjs-dist/build/pdf.worker.min.mjs",
+        import.meta.url
+      ).toString();
+
+      setPdfjs(pdfjsInstance);
+    });
+  }, []);
+
+  // Don't render Document until pdfjs is configured
+  if (!pdfjs) return null;
+
   return (
     <div>
       <DesktopPDFViewer issues={issues} issue={issue} className={className} />
