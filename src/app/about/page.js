@@ -25,20 +25,20 @@ export default function About() {
  </p>
 
         <Title className="mt-15">A Brief History</Title>
-        <p className="afacad"><i>The Cannon</i> was originally started as a newspaper, 
+        <div className="afacad"><i>The Cannon</i> was originally started as a newspaper, 
           published monthly to inform the student body on happenings within the faculty. 
           Over the years, there became a growing need to publish not only facts but also 
           opinions, art and poetry. And thus, in 2022, as demand for an arts and culture 
           publication grew, <i>The Cannon</i>, as a magazine, was officially formed. 
           <br/><br/>
           In 2025, <i>The Cannon</i> was reformatted to include six distinct sections: Media & Culture, 
-          Skule<p className="inline-block text-[10px] -translate-y-2">TM</p> Life, Science & Research, Humour & Comics, Poetry & Fiction and Puzzles & Games. 
+          Skule<div className="inline-block text-[10px] -translate-y-2">TM</div> Life, Science & Research, Humour & Comics, Poetry & Fiction and Puzzles & Games. 
           Regardless of what your interests are, or what kinds of content you enjoy creating (or consuming!), 
           there is a place for you to showcase your work (and explore others’ work!) here at <i>The Cannon</i>. 
           <br/><br/>
           If you’re interested in learning more about our history, check out our page on <a href="https://skulepedia.ca/wiki/The_Cannon_(Magazine)" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">Skulepedia</a>, 
           a wiki-based archive for all things engineering-related at UofT! 
-        </p>
+        </div>
 
         <Title className="mt-15">Meet the Team</Title>
         <p className="afacad"><i>The Cannon</i> is run by a small team of dedicated students 

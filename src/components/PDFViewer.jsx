@@ -1,15 +1,42 @@
-'use client';
-import React, { useState, useEffect, useRef } from "react";
-import { Document, Page, pdfjs } from "react-pdf";
+"use client";
+
+import { useState, useEffect, useRef } from "react";
+import dynamic from "next/dynamic";
+
 import "react-pdf/dist/Page/TextLayer.css"; 
 import "react-pdf/dist/Page/AnnotationLayer.css"; 
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  'pdfjs-dist/build/pdf.worker.min.mjs',
-  import.meta.url,
-).toString();
+// Dynamically load Document and Page — this prevents SSR from running PDF.js
+const Document = dynamic(
+  () => import("react-pdf").then((mod) => mod.Document),
+  { ssr: false }
+);
+
+const Page = dynamic(
+  () => import("react-pdf").then((mod) => mod.Page),
+  { ssr: false }
+);
 
 const PDFViewer = ({ issues, issue = 0, className = "" }) => {
+  const [pdfjs, setPdfjs] = useState(null);
+
+  useEffect(() => {
+    // Load pdfjs after the component mounts (browser only)
+    import("react-pdf").then((mod) => {
+      const pdfjsInstance = mod.pdfjs;
+
+      pdfjsInstance.GlobalWorkerOptions.workerSrc = new URL(
+        "pdfjs-dist/build/pdf.worker.min.mjs",
+        import.meta.url
+      ).toString();
+
+      setPdfjs(pdfjsInstance);
+    });
+  }, []);
+
+  // Don't render Document until pdfjs is configured
+  if (!pdfjs) return null;
+
   return (
     <div>
       <DesktopPDFViewer issues={issues} issue={issue} className={className} />
@@ -83,7 +110,7 @@ const DesktopPDFViewer = ({ issues, issue = 0, className = "" }) => {
         {pageNumber + 1 < numPages && !doublePage && pageNumber != 1 && (containerWidth > 600) && <Page pageNumber={pageNumber + 1} width={pageRenderWidth} className="m-0 p-0 my-2" renderMode="canvas" />}
       </Document>
 
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none z-20">
         <div
           role="button"
           tabIndex={0}
