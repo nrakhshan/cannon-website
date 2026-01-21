@@ -1,5 +1,13 @@
 [
     {
+        "name": "Languages",
+        "volume": "XLVIII",
+        "issue": "Winter 2T6",
+        "file": "/issues/2t6-january.pdf",
+        "thumbnail": "/thumbnails/languages.png",
+        "doublepage": false
+    },
+    {
         "name": "Mysteries",
         "volume": "XLVIII",
         "issue": "Fall 2T5",
