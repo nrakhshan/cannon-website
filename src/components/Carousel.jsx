@@ -19,9 +19,9 @@ const Carousel = ({ issues, issue, setIssue, className }) => {
 
     const onPointerDown = (e) => {
         if (!scrollerRef.current) return;
-        
+
         if (e.target && e.target.closest && e.target.closest('[data-no-drag="true"]')) {
-          return;
+            return;
         }
 
         isDown.current = true;
@@ -40,82 +40,105 @@ const Carousel = ({ issues, issue, setIssue, className }) => {
     const endDrag = (e) => {
         if (!scrollerRef.current) return;
         isDown.current = false;
-        try { scrollerRef.current.releasePointerCapture?.(e?.pointerId); } catch {}
+        try { scrollerRef.current.releasePointerCapture?.(e?.pointerId); } catch { }
         scrollerRef.current.classList.remove('grabbing');
     }
 
     const handleSelect = (idx) => {
-      setIssue(idx);
+        setIssue(idx);
     }
 
     const handleKeySelect = (e, idx) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        handleSelect(idx);
-      }
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            handleSelect(idx);
+        }
     }
 
-return (
-    <div className={className}>
-        <div className="flex gap-4 justify-between items-center mx-[9%] lg:mx-[6%]">
-            <button
-                aria-label="scroll left"
-                className="flex-shrink-0 cursor-pointer"
-                onClick={() => scrollLeft(scrollerRef.current, 310)}
-            >
-                <img src="assets/arrowleft.svg" alt="Left Arrow" />
-            </button>
 
-            <div
-                ref={scrollerRef}
-                className="flex-grow flex pl-5 pr-5 flex-nowrap overflow-x-auto gap-20 justify-between items-start no-scrollbar cursor-grab"
-                style={{ touchAction: 'pan-y' }}
-                onPointerDown={onPointerDown}
-                onPointerMove={onPointerMove}
-                onPointerUp={endDrag}
-                onPointerCancel={endDrag}
-                onPointerLeave={endDrag}
-            >
-                {issues.map((issueItem, index) => (
-                    <div 
-                        key={index} 
-                        className={`${issue === index ? 'bg-secondary' : ''} rounded-lg flex-none w-[230px] text-center`}
-                        tabIndex={0}
-                        data-no-drag="true"
-                        onClick={() => handleSelect(index)}
-                        onKeyDown={(e) => handleKeySelect(e, index)}
-                    >
+    const handleDownload = (file, name) => {
+        const link = document.createElement('a');
+        link.href = file;
+        link.download = name;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
+
+    return (
+        <div className={className}>
+            <div className="flex gap-4 justify-between items-center mx-[9%] lg:mx-[6%]">
+                <button
+                    aria-label="scroll left"
+                    className="flex-shrink-0 cursor-pointer"
+                    onClick={() => scrollLeft(scrollerRef.current, 310)}
+                >
+                    <img src="assets/arrowleft.svg" alt="Left Arrow" />
+                </button>
+
+                <div
+                    ref={scrollerRef}
+                    className="flex-grow flex pl-5 pr-5 flex-nowrap overflow-x-auto gap-20 justify-between items-start no-scrollbar cursor-grab"
+                    style={{ touchAction: 'pan-y' }}
+                    onPointerDown={onPointerDown}
+                    onPointerMove={onPointerMove}
+                    onPointerUp={endDrag}
+                    onPointerCancel={endDrag}
+                    onPointerLeave={endDrag}
+                >
+                    {issues.map((issueItem, index) => (
                         <div
-                          role="button"
-                          className={`relative overflow-hidden rounded-lg shadow-md aspect-[3/4] cursor-pointer transition-all duration-150`}
+                            key={index}
+                            className={`${issue === index ? 'bg-secondary' : ''} rounded-lg flex-none w-[230px] text-center`}
+                            tabIndex={0}
+                            data-no-drag="true"
+                            onClick={() => handleSelect(index)}
+                            onKeyDown={(e) => handleKeySelect(e, index)}
                         >
-                            <Image
-                                src={issueItem.thumbnail}
-                                alt={issueItem.name}
-                                fill
-                                className="object-cover pointer-events-none"
-                                draggable={false}
-                                style={{ WebkitUserDrag: 'none' }}
-                                priority={false}
-                            />
+                            <div
+                                role="button"
+                                className={`relative overflow-hidden rounded-lg shadow-md aspect-[3/4] cursor-pointer transition-all duration-150`}
+                            >
+                                <Image
+                                    src={issueItem.thumbnail}
+                                    alt={issueItem.name}
+                                    fill
+                                    className="object-cover pointer-events-none"
+                                    draggable={false}
+                                    style={{ WebkitUserDrag: 'none' }}
+                                    priority={false}
+                                />
+                            </div>
+                            <div
+                                className="flex justify-between items-start text-left pl-3 pr-1"
+                            >
+                                <div>
+                                    <h2 className="afacad font-bold text-2xl mt-5">{issueItem.name}</h2>
+                                    <h3 className="afacad text-lg pb-5">VOL {issueItem.volume}</h3>
+                                    <h3 className="afacad text-lg pb-5">{issueItem.issue}</h3>
+                                </div>
+                                <button
+                                    className="w-10 mt-7"
+                                    onClick={() => handleDownload(issueItem.file, issueItem.name + ".pdf")}
+                                >
+                                    <img src="assets/download.svg" alt="Download" />
+                                </button>
+                            </div>
                         </div>
+                    ))}
+                </div>
 
-                        <h2 className="afacad font-bold text-2xl mt-5">{issueItem.name}</h2>
-                        <h3 className="afacad text-lg pb-5">VOL {issueItem.volume}</h3>
-                        <h3 className="afacad text-lg pb-5">{issueItem.issue}</h3>
-                    </div>
-                ))}
+                <button
+                    aria-label="scroll right"
+                    className="flex-shrink-0 cursor-pointer"
+                    onClick={() => scrollRight(scrollerRef.current, 310)}
+                >
+                    <img src="assets/arrowright.svg" alt="Right Arrow" />
+                </button>
             </div>
-
-            <button
-                aria-label="scroll right"
-                className="flex-shrink-0 cursor-pointer"
-                onClick={() => scrollRight(scrollerRef.current, 310)}
-            >
-                <img src="assets/arrowright.svg" alt="Right Arrow" />
-            </button>
         </div>
-    </div>
-)}
+    )
+}
 
 export default Carousel
