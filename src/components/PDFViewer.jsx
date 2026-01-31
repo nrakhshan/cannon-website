@@ -48,6 +48,8 @@ const DesktopPDFViewer = ({ issues, issue = 0, className = "" }) => {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(0);
 
+  const [inputValue, setInputValue] = useState(1)
+
   const doublePage = issues[issue]?.doublepage || false;
 
   const containerRef = useRef(null);
@@ -78,30 +80,46 @@ const DesktopPDFViewer = ({ issues, issue = 0, className = "" }) => {
   const handlePageLeft = () => {
     if (pageNumber === 2 && pageIncrement === 2) {
       setPageNumber(1);
+      setInputValue(1);
     }
     else if (pageNumber % 2 == 1 && containerWidth > 600 && !doublePage && pageNumber > 1) {
       setPageNumber(pageNumber - pageIncrement + 1);
+      setInputValue(pageNumber - pageIncrement + 1);
     }
     else if (pageNumber > 1) {
       setPageNumber(pageNumber - pageIncrement);
+      setInputValue(pageNumber - pageIncrement);
     }
   };
 
   const handlePageRight = () => {
     if (pageNumber % 2 == 1 && containerWidth > 600 && !doublePage) {
       setPageNumber(pageNumber + pageIncrement - 1);
+      setInputValue(pageNumber + pageIncrement - 1);
     }
     else if (pageNumber + 1 < numPages) {
       setPageNumber(pageNumber + pageIncrement);
+      setInputValue(pageNumber + pageIncrement);
     }
     else if (pageNumber + 1 === numPages && pageIncrement === 1) {
       setPageNumber(pageNumber + 1);
+      setInputValue(pageNumber + 1);
     }
   };
 
-  const handlePageJump = (pageToJump) => {
-    if (pageToJump > 0 && pageToJump <= numPages) {
+  const handlePageJump = () => {
+    const pageToJump = Number(inputValue)
+
+    if (Number.isNaN(pageToJump)) {
+      setInputValue(pageNumber)
+      return
+    }
+
+    if (pageToJump >= 1 && pageToJump <= numPages) {
       setPageNumber(pageToJump)
+      setInputValue(pageToJump)
+    } else {
+      setInputValue(pageNumber)
     }
   }
 
@@ -151,8 +169,14 @@ const DesktopPDFViewer = ({ issues, issue = 0, className = "" }) => {
             <div className="bg-invert rounded-md px-3 py-1 text-sm shadow-md">
               Page <input
                 className="inline bg-secondary rounded-md px-2 py-0.5 ml-2 w-8"
-                value={pageNumber}
-                onChange={(e) => handlePageJump(Number(e.target.value))}
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    handlePageJump()
+                  }
+                }}
+                onBlur={handlePageJump}
               />
               of {numPages}
             </div>
