@@ -3,8 +3,8 @@
 import { useState, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 
-import "react-pdf/dist/Page/TextLayer.css"; 
-import "react-pdf/dist/Page/AnnotationLayer.css"; 
+import "react-pdf/dist/Page/TextLayer.css";
+import "react-pdf/dist/Page/AnnotationLayer.css";
 
 // Dynamically load Document and Page — this prevents SSR from running PDF.js
 const Document = dynamic(
@@ -43,7 +43,7 @@ const PDFViewer = ({ issues, issue = 0, className = "" }) => {
     </div>
   );
 };
-  
+
 const DesktopPDFViewer = ({ issues, issue = 0, className = "" }) => {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(0);
@@ -79,7 +79,7 @@ const DesktopPDFViewer = ({ issues, issue = 0, className = "" }) => {
     if (pageNumber === 2 && pageIncrement === 2) {
       setPageNumber(1);
     }
-    else if (pageNumber%2 == 1 && containerWidth > 600 && !doublePage && pageNumber > 1) {
+    else if (pageNumber % 2 == 1 && containerWidth > 600 && !doublePage && pageNumber > 1) {
       setPageNumber(pageNumber - pageIncrement + 1);
     }
     else if (pageNumber > 1) {
@@ -88,7 +88,7 @@ const DesktopPDFViewer = ({ issues, issue = 0, className = "" }) => {
   };
 
   const handlePageRight = () => {
-    if (pageNumber%2 == 1 && containerWidth > 600 && !doublePage) {
+    if (pageNumber % 2 == 1 && containerWidth > 600 && !doublePage) {
       setPageNumber(pageNumber + pageIncrement - 1);
     }
     else if (pageNumber + 1 < numPages) {
@@ -99,8 +99,14 @@ const DesktopPDFViewer = ({ issues, issue = 0, className = "" }) => {
     }
   };
 
+  const handlePageJump = (pageToJump) => {
+    if (pageToJump > 0 && pageToJump <= numPages) {
+      setPageNumber(pageToJump)
+    }
+  }
+
   return (
-    <div ref={containerRef} className={`mt-20 relative w-[90%] mx-auto ${className}`}> 
+    <div ref={containerRef} className={`mt-20 relative w-[90%] mx-auto ${className}`}>
       <Document
         className='bg-secondary rounded-lg flex justify-center'
         file={issues[issue].file}
@@ -143,7 +149,12 @@ const DesktopPDFViewer = ({ issues, issue = 0, className = "" }) => {
 
           <div className="absolute left-1/2 -translate-x-1/2 bottom-4 pointer-events-auto">
             <div className="bg-invert rounded-md px-3 py-1 text-sm shadow-md">
-              Page <span className="inline bg-secondary rounded-md px-2 py-0.5 ml-2">{pageNumber}</span> of {numPages}
+              Page <input
+                className="inline bg-secondary rounded-md px-2 py-0.5 ml-2 w-8"
+                value={pageNumber}
+                onChange={(e) => handlePageJump(Number(e.target.value))}
+              />
+              of {numPages}
             </div>
           </div>
 
