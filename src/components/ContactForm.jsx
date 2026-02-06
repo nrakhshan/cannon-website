@@ -19,7 +19,7 @@ const ContactForm = () => {
                 <div >
                     <label className="block my-2">
                         Message: </label>
-                    <textarea rows="6" className="bg-background focus-bg-secondary rounded-2xl border border-base block px-4 py-2.5 w-full" />
+                    <textarea rows="6" className="bg-background focus-bg-secondary rounded-2xl border border-base block px-3.5 py-2.5 w-full" />
                 </div>
                 <button type="submit" onClick={() => alert("The form doesn't work yet lol pls just email us")} className="mt-2 p-2 float-right font-semibold uppercase inline-flex items-center gap-2 group">
                     <span>Submit</span>
