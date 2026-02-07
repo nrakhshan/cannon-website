@@ -116,8 +116,13 @@ const DesktopPDFViewer = ({ issues, issue = 0, className = "" }) => {
     }
 
     if (pageToJump >= 1 && pageToJump <= numPages) {
-      setPageNumber(pageToJump)
-      setInputValue(pageToJump)
+      if (pageToJump % 2 == 0 || pageToJump == 1) {
+        setPageNumber(pageToJump)
+        setInputValue(pageToJump)
+      } else {
+        setPageNumber(pageToJump - 1)
+        setInputValue(pageToJump - 1)
+      }
     } else {
       setInputValue(pageNumber)
     }
