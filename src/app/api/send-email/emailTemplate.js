@@ -154,7 +154,7 @@ exports.emailTemplateBuilder = (
           <tr>
             <td style="width:108px;">
               
-      <img src="https://storage.googleapis.com/topol-web/uploads/698b66ea6d462/logo-white.png" style="border:0;border-radius:0px 0px 0px 0px;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="108" height="auto">
+      <img src="https://github.com/nrakhshan/cannon-website/blob/fix/contact-form/public/assets/logo-white.png?raw=true" style="border:0;border-radius:0px 0px 0px 0px;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="108" height="auto">
     
             </td>
           </tr>
