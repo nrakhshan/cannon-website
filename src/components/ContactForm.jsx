@@ -16,29 +16,6 @@ const ContactForm = () => {
     }));
   }
 
-  // function handleSubmit(e) {
-  //   e.preventDefault();
-
-  //   const params = {
-  //     name: form.name,
-  //     email: form.email,
-  //     message: form.message,
-  //   }
-
-  //   console.log(params);
-
-  //   emailjs.send(process.env.SERVICE_ID, process.env.TEMPLATE_ID, params, process.env.PUBLIC_KEY).then(() => {
-  //     alert("Message sent successfully");
-  //     setForm({
-  //       name: "",
-  //       email: "",
-  //       message: "",
-  //     });
-  //   }).catch((error) => {
-  //     alert("Failed to send message: " + error.text);
-  //   });
-  // }
-
   async function handleSubmit(e) {
     e.preventDefault();
     try {
@@ -49,7 +26,6 @@ const ContactForm = () => {
       });
       const data = await res.json();
       if (!data.ok) throw new Error(data.error || 'Send failed');
-      alert('Message sent successfully');
       setForm({ name: '', email: '', message: '' });
     } catch (error) {
       alert('Failed to send message: ' + error.message);
