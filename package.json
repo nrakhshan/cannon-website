@@ -12,6 +12,7 @@
     "@emailjs/browser": "^4.4.1",
     "@emailjs/nodejs": "^5.0.2",
     "framer-motion": "^12.23.24",
+    "mailtrap": "^4.4.0",
     "next": "^16.0.7",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
