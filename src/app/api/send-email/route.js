@@ -16,6 +16,9 @@ const sender = {
 const recipients = [
   {
     email: "webmaster@cannon.skule.ca",
+  },
+  {
+    email: "cannon@skule.ca",
   }
 ];
 
