@@ -45,7 +45,7 @@ const DesktopNav = () => {
   const scrollDirection = useScrollDirection();
 
   return (
-    <div className={`fixed top-0 bg-white z-50 lg:flex w-full items-center justify-between pt-10 pb-5 pr-[5%] pl-[5%] transform transition-transform duration-500 ${scrollDirection === "down" ? "-translate-y-full" : "translate-y-0"}`}>
+    <div className={`hidden fixed top-0 bg-white z-50 lg:flex w-full items-center justify-between pt-10 pb-5 pr-[5%] pl-[5%] transform transition-transform duration-500 ${scrollDirection === "down" ? "-translate-y-full" : "translate-y-0"}`}>
       <Link href="/">
         <Image className="w-15 h-15 " src={Logo} alt="Logo" />
       </Link>
