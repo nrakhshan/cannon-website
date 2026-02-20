@@ -1,5 +1,5 @@
 "use client";
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Logo from '../../public/assets/logo.svg';
 import Menu from '../../public/assets/menu.svg';
@@ -17,11 +17,35 @@ const NavBar = () => {
   )
 }
 
+function useScrollDirection() {
+  const [scrollDirection, setScrollDirection] = useState(null);
+
+  useEffect(() => {
+    let lastScrollY = window.pageYOffset;
+
+    const updateScrollDirection = () => {
+      const scrollY = window.pageYOffset;
+      const direction = scrollY > lastScrollY ? "down" : "up";
+      if (direction !== scrollDirection && (scrollY - lastScrollY > 5 || scrollY - lastScrollY < -5)) {
+        setScrollDirection(direction);
+      }
+      lastScrollY = scrollY > 0 ? scrollY : 0;
+    };
+    window.addEventListener("scroll", updateScrollDirection); // add event listener
+    return () => {
+      window.removeEventListener("scroll", updateScrollDirection); // clean up
+    }
+  }, [scrollDirection]);
+
+  return scrollDirection;
+};
+
 const DesktopNav = () => {
-  const linkStyle = "afacad font-semibold text-[20px] text-base hover-text-accent bg-[rgba(255,255,255,0.5)] rounded-full backdrop-blur-xs px-5 py-2";
-  
+  const linkStyle = "afacad font-semibold text-[20px] text-base hover-text-accent rounded-full px-5 py-2";
+  const scrollDirection = useScrollDirection();
+
   return (
-    <div className='hidden z-100 lg:flex fixed w-[100%] items-center justify-between top-10 pr-[5%] pl-[5%]'>
+    <div className={`fixed top-0 bg-white z-50 lg:flex w-full items-center justify-between pt-10 pb-5 pr-[5%] pl-[5%] transform transition-transform duration-500 ${scrollDirection === "down" ? "-translate-y-full" : "translate-y-0"}`}>
       <Link href="/">
         <Image className="w-15 h-15 " src={Logo} alt="Logo" />
       </Link>
@@ -30,7 +54,7 @@ const DesktopNav = () => {
       <Link href="/issues" className={linkStyle}>Issues</Link>
       <Link href="/contact" className={linkStyle}>Contact Us</Link>
       <a href="https://forms.gle/ekY9KS5HYb2CHVTt9" target="_blank" rel="noopener noreferrer">
-        <ButtonRound text="Subscribe"/>
+        <ButtonRound text="Subscribe" />
       </a>
     </div>
   )
@@ -58,25 +82,25 @@ const MobileNav = () => {
         <Image className={`w-15 h-15 ${isOpen ? 'invert brightness-1' : ''}`} src={Logo} alt="Logo" />
       </Link>
       <Image className="z-50 w-15 h-15 cursor-pointer" src={icon} alt="Menu" onClick={toggleMenu} />
-      <motion.div 
-      variants={{
-        initial: {
-          x: '100%'
-        },
-        open: {
-          x: '0%'
-        },
-        close: {
-          x: '100%'
-        }
-      }}
-      transition={{
-        duration: 0.3,
-        ease: "circInOut"
-      }}
-      initial="initial"
-      animate={isOpen ? "open" : "close"}
-      className={`fixed top-0 right-0 h-full w-full bg-base`}>
+      <motion.div
+        variants={{
+          initial: {
+            x: '100%'
+          },
+          open: {
+            x: '0%'
+          },
+          close: {
+            x: '100%'
+          }
+        }}
+        transition={{
+          duration: 0.3,
+          ease: "circInOut"
+        }}
+        initial="initial"
+        animate={isOpen ? "open" : "close"}
+        className={`fixed top-0 right-0 h-full w-full bg-base`}>
         <div className='flex flex-col items-center mt-30'>
           <Link href="/" className={menuitem} onClick={toggleMenu}>Home</Link>
           <Link href="/about" className={menuitem} onClick={toggleMenu}>About</Link>
