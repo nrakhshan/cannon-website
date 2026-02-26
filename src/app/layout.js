@@ -1,4 +1,5 @@
 import { Cantata_One, Afacad, Poppins} from "next/font/google";
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
 
 const cantataOne = Cantata_One({
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${poppins.variable} ${afacad.variable} ${cantataOne.variable}`}>
       <body className={`antialiased`}>
         {children}
+        <Analytics />
       </body> 
     </html>
   );
