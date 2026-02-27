@@ -4,8 +4,14 @@ import NavBar from "@/components/NavBar";
 import issues from '../../data/issues.json'
 import Carousel from "@/components/Carousel";
 import Title from "@/components/Title";
-import PDFViewer from "@/components/PDFViewer";
+// import PDFViewer from "@/components/PDFViewer";
 import React, { useState } from 'react'
+import dynamic from "next/dynamic";
+
+const PDFViewer = dynamic(
+  () => import("@/components/PDFViewer"),
+  { ssr: false }
+);
 
 export default function Issues() {
   const [issue, setIssue] = useState(0);
