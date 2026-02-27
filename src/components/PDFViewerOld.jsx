@@ -1,16 +1,42 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
-import "./polyfills/safari-polyfill";
-import { Document, Page, pdfjs } from 'react-pdf';
-import 'react-pdf/dist/Page/AnnotationLayer.css';
-import 'react-pdf/dist/Page/TextLayer.css';
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  'pdfjs-dist/build/pdf.worker.min.mjs',
-  import.meta.url,
-).toString();
+import { useState, useEffect, useRef } from "react";
+import dynamic from "next/dynamic";
+
+import "react-pdf/dist/Page/TextLayer.css";
+import "react-pdf/dist/Page/AnnotationLayer.css";
+
+// Dynamically load Document and Page — this prevents SSR from running PDF.js
+const Document = dynamic(
+  () => import("react-pdf").then((mod) => mod.Document),
+  { ssr: false }
+);
+
+const Page = dynamic(
+  () => import("react-pdf").then((mod) => mod.Page),
+  { ssr: false }
+);
 
 const PDFViewer = ({ issues, issue = 0, className = "" }) => {
+  const [pdfjs, setPdfjs] = useState(null);
+
+  useEffect(() => {
+    // Load pdfjs after the component mounts (browser only)
+    import("react-pdf").then((mod) => {
+      const pdfjsInstance = mod.pdfjs;
+
+      pdfjsInstance.GlobalWorkerOptions.workerSrc = new URL(
+        "pdfjs-dist/build/pdf.worker.min.mjs",
+        import.meta.url
+      ).toString();
+
+      setPdfjs(pdfjsInstance);
+    });
+  }, []);
+
+  // Don't render Document until pdfjs is configured
+  if (!pdfjs) return null;
+
   return (
     <div>
       <DesktopPDFViewer issues={issues} issue={issue} className={className} />
@@ -30,13 +56,13 @@ const DesktopPDFViewer = ({ issues, issue = 0, className = "" }) => {
   const [containerWidth, setContainerWidth] = useState(0);
 
   useEffect(() => {
-    const element = containerRef.current;
-    if (!element) return;
-    const update = () => setContainerWidth(element.clientWidth);
+    const el = containerRef.current;
+    if (!el) return;
+    const update = () => setContainerWidth(el.clientWidth);
     update();
-    const observer = new ResizeObserver(update);
-    observer.observe(element);
-    return () => observer.disconnect();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => ro.disconnect();
   }, []);
 
   const gapPx = 16;
