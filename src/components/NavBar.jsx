@@ -51,7 +51,17 @@ const DesktopNav = () => {
       </Link>
       <Link href="/" className={linkStyle}>Home</Link>
       <Link href="/about" className={linkStyle}>About</Link>
-      <Link href="/issues" className={linkStyle}>Issues</Link>
+      {/* <Link href="/issues" className={linkStyle}>Issues</Link> */}
+      <div class="relative group">
+        <button className={linkStyle}>
+          Issues
+        </button>
+        <ul
+          class="absolute mt-2 w-48 bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150">
+          <li class="bg-background hover-bg-base afacad font-semibold text-[20px] text-base hover-text-invert px-5 py-2"><Link href="/issues">Magazine</Link></li>
+          <li class="bg-background hover-bg-base afacad font-semibold text-[20px] text-base hover-text-invert px-5 py-2"><Link href="/archive">Pre-Magazine</Link></li>
+        </ul>
+      </div>
       <Link href="/contact" className={linkStyle}>Contact Us</Link>
       <a href="https://forms.gle/ekY9KS5HYb2CHVTt9" target="_blank" rel="noopener noreferrer">
         <ButtonRound text="Subscribe" />
