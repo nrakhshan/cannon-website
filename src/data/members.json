@@ -2,8 +2,9 @@
     {
         "name": "Christina Pizzonia",
         "role": "Editor-in-Chief",
-        "quote": "Is it better to speak or to die?",
-        "source": "Call Me By Your Name",
+        "quote": "It was a time when the unthinkable became the thinkable and the impossible really happened.",
+        "speaker": "Arundhati Roy",
+        "source": "The God of Small Things",
         "photo": "/members/christina-pizzonia.png"
     },
     {
@@ -46,9 +47,8 @@
     {
         "name": "Nusaiba Rakhshan",
         "role": "Web Developer",
-        "quote": "It takes time to build a cage large enough to trick a wolf into believing it's free.",
-        "speaker": "Joseph Vayezid",
-        "source": "The Stellar Swordmaster",
+        "quote": "A designer knows he has achieved perfection not when there is nothing left to add, but when there is nothing left to take away.",
+        "speaker": "Antoine de Saint-Exupéry",
         "photo": "/members/nusaiba-rakhshan.JPG"
     },
     {
