@@ -1,5 +1,13 @@
 [
     {
+        "name": "Dreams",
+        "volume": "XLVIII",
+        "issue": "Spring 2T6",
+        "file": "/issues/2t6-march.pdf",
+        "thumbnail": "/thumbnails/dreams.png",
+        "doublepage": false
+    },
+    {
         "name": "Languages",
         "volume": "XLVIII",
         "issue": "Winter 2T6",
