@@ -1,5 +1,13 @@
 [
     {
+        "name": "After Hours",
+        "volume": "XLIX",
+        "issue": "Summer 2T6",
+        "file": "/issues/2t6-august.pdf",
+        "thumbnail": "/thumbnails/after-hours.png",
+        "doublepage": true
+    },
+    {
         "name": "Dreams",
         "volume": "XLVIII",
         "issue": "Spring 2T6",
