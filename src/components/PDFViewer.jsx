@@ -145,9 +145,9 @@ const DesktopPDFViewer = ({ issues, issue = 0, className = "" }) => {
           </div>
 
           <div className="absolute left-1/2 -translate-x-1/2 bottom-4 pointer-events-auto">
-            <div className="bg-invert rounded-md px-3 py-1 text-sm shadow-md">
+            <div className="bg-invert text-secondary rounded-md px-3 py-1 text-sm shadow-md">
               Page <input
-                className="inline bg-secondary rounded-md px-2 py-0.5 ml-2 w-8"
+                className="inline bg-secondary text-base rounded-md px-2 py-0.5 ml-2 w-8"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyDown={(e) => {
@@ -173,7 +173,7 @@ const DesktopPDFViewer = ({ issues, issue = 0, className = "" }) => {
         </div>
       </div>
       {doublePage && containerWidth <= 600 && (
-        <div className="absolute top-5 left-2 bg-invert text-sm px-2 py-1 rounded-md shadow-md">
+        <div className="absolute top-5 left-2 bg-invert text-secondary text-sm px-2 py-1 rounded-md shadow-md">
           This issue is best viewed on a larger screen
         </div>
       )}

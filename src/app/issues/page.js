@@ -2,7 +2,7 @@
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import issues from '../../data/issues.json'
-import Carousel from "@/components/Carousel";
+import Grid from "@/components/Grid";
 import Title from "@/components/Title";
 // import PDFViewer from "@/components/PDFViewer";
 import React, { useState } from 'react'
@@ -22,7 +22,7 @@ export default function Issues() {
       <div className="mt-15 mb-2 w-full lg:px-[6%] pt-24 px-[9%] text-[18px]">
         <Title>Issues</Title>
       </div>
-      <Carousel issues={issues} issue={issue} setIssue={setIssue} />
+      <Grid issues={issues} issue={issue} setIssue={setIssue} />
       <PDFViewer issues={issues} issue={issue} />
       <Footer />
     </div>

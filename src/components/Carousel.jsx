@@ -116,7 +116,7 @@ const Carousel = ({ issues, issue, setIssue, className }) => {
                                 <div>
                                     <h2 className="afacad font-bold text-2xl mt-5">{issueItem.name}</h2>
                                     <h3 className="afacad text-lg pb-5">VOL {issueItem.volume}</h3>
-                                    <h3 className="afacad text-lg pb-5">{issueItem.issue}</h3>
+                                    <h3 className="afacad text-lg pb-5">{issueItem.quarter} {issueItem.year}</h3>
                                 </div>
                                 <button
                                     className="w-10 mt-7"

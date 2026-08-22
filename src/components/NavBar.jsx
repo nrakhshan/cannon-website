@@ -45,9 +45,9 @@ const DesktopNav = () => {
   const scrollDirection = useScrollDirection();
 
   return (
-    <div className={`hidden fixed top-0 bg-white z-50 lg:flex w-full items-center justify-between pt-10 pb-5 pr-[5%] pl-[5%] transform transition-transform duration-500 ${scrollDirection === "down" ? "-translate-y-full" : "translate-y-0"}`}>
+    <div className={`hidden fixed top-0 bg-base z-50 lg:flex w-full items-center justify-between pt-10 pb-5 pr-[5%] pl-[5%] transform transition-transform duration-500 ${scrollDirection === "down" ? "-translate-y-full" : "translate-y-0"}`}>
       <Link href="/">
-        <Image className="w-15 h-15 " src={Logo} alt="Logo" />
+        <Image className="w-15 h-15" src={Logo} alt="Logo" />
       </Link>
       <Link href="/" className={linkStyle}>Home</Link>
       <Link href="/about" className={linkStyle}>About</Link>
@@ -79,9 +79,9 @@ const MobileNav = () => {
   return (
     <div className='z-99 flex lg:hidden fixed w-[100%] items-center justify-between top-10 pr-[5%] pl-[5%]'>
       <Link href="/" className='z-100' onClick={toggleMenu}>
-        <Image className={`w-15 h-15 ${isOpen ? 'invert brightness-1' : ''}`} src={Logo} alt="Logo" />
+        <Image className="w-15 h-15" src={Logo} alt="Logo" />
       </Link>
-      <Image className="z-50 w-15 h-15 cursor-pointer" src={icon} alt="Menu" onClick={toggleMenu} />
+      <Image className="z-50 w-15 h-15 cursor-pointer invert brightness-1" src={icon} alt="Menu" onClick={toggleMenu} />
       <motion.div
         variants={{
           initial: {

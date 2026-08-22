@@ -2,12 +2,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --base: #00275C;
-  --secondary: #EAEEF3;
+  --background: #000000;
+  --base: #ffffff;
+  --secondary: #181818;
   --invert: #ffffff;
-  --accent: #FFC809;
-  --highlight: #0C3268;
+  --accent: #2b7fff;
+  --highlight: #181818;
 }
 
 /* @theme inline {
@@ -44,7 +44,7 @@ body {
 }
 
 .bg-base {
-  background-color: var(--base);
+  background-color: var(--background);
 }
 
 .hover-text-base:hover {
@@ -87,7 +87,8 @@ body {
   background-color: var(--secondary);
 }
 
-.focus-bg-secondary:focus, .focus-bg-secondary:active {
+.focus-bg-secondary:focus,
+.focus-bg-secondary:active {
   background-color: var(--secondary);
 }
 
@@ -124,11 +125,12 @@ body {
 }
 
 .no-scrollbar {
-  -ms-overflow-style: none; 
-  scrollbar-width: none; 
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
+
 .no-scrollbar::-webkit-scrollbar {
-  display: none; 
-  -ms-overflow-style: none; 
-  scrollbar-width: none; 
+  display: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

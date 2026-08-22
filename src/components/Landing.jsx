@@ -24,7 +24,7 @@ const Landing = () => {
                     height="45px"
                     src="/assets/arrowright.svg"
                     alt="Cover Image"
-                    className="inline ml-5 rotate-90"
+                    className="inline ml-5 rotate-90 invert brightness-1"
                 />
             </motion.div>
 
