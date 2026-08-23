@@ -10,19 +10,19 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   import.meta.url,
 ).toString();
 
-const PDFViewer = ({ issues, issue = 0, className = "" }) => {
+const PDFViewer = ({ issues, issue = 0, initialPage = 1, className = "" }) => {
   return (
     <div>
-      <DesktopPDFViewer issues={issues} issue={issue} className={className} />
+      <DesktopPDFViewer issues={issues} issue={issue} initialPage={initialPage} className={className} />
     </div>
   );
 };
 
-const DesktopPDFViewer = ({ issues, issue = 0, className = "" }) => {
+const DesktopPDFViewer = ({ issues, issue = 0, initialPage = 1, className = "" }) => {
   const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(0);
+  const [pageNumber, setPageNumber] = useState(initialPage);
 
-  const [inputValue, setInputValue] = useState(1)
+  const [inputValue, setInputValue] = useState(initialPage);
 
   const doublePage = issues[issue]?.doublepage || false;
 
@@ -48,7 +48,11 @@ const DesktopPDFViewer = ({ issues, issue = 0, className = "" }) => {
 
   const onDocumentLoadSuccess = ({ numPages }) => {
     setNumPages(numPages);
-    setPageNumber(1);
+
+    const page = Math.min(Math.max(initialPage, 1), numPages);
+
+    setPageNumber(page);
+    setInputValue(page);
   };
 
   const handlePageLeft = () => {
@@ -157,7 +161,7 @@ const DesktopPDFViewer = ({ issues, issue = 0, className = "" }) => {
                 }}
                 onBlur={handlePageJump}
               />
-              of {numPages}
+              {" "} of {numPages}
             </div>
           </div>
 
