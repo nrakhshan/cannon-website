@@ -6,7 +6,11 @@
         "year": "2T6",
         "file": "/issues/2t6-august.pdf",
         "thumbnail": "/thumbnails/after-hours.png",
-        "doublepage": true
+        "hero": {
+            "image": "/heroes/after-hours.png",
+            "credit": "Linden Zheng"
+        },
+        "doublepage": false
     },
     {
         "name": "Dreams",

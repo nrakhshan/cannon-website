@@ -38,7 +38,7 @@ const DesktopFooter = () => {
         </div>
 
         <p className="text-center text-sm py-3">
-          © 2025 The Cannon. All rights reserved.
+          © 2026 The Cannon. All rights reserved.
         </p>
       </footer>
     </div>
@@ -65,7 +65,7 @@ const MobileFooter = () => {
         </ul>
 
         <p className="text-center text-sm py-3">
-          © 2025 The Cannon. All rights reserved.
+          © 2026 The Cannon. All rights reserved.
         </p>
       </footer>
     </div>

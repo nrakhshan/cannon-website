@@ -108,7 +108,7 @@ const MobileNav = () => {
           <Link href="/contact" className={menuitem} onClick={toggleMenu}>Contact Us</Link>
           <Link href="/" className={menuitem} onClick={handleSubscribe}>Subscribe</Link>
           <div className='afacad bottom-[45px] absolute w-full text-center text-sm text-invert'>
-            Copyright © 2025 The Cannon
+            Copyright © 2026 The Cannon
           </div>
         </div>
       </motion.div>
