@@ -115,7 +115,7 @@ const MobileProfiles = () => {
         >
           {members.map((member, index) => (
             <div key={index} className="w-[48%] md:w-[31%] shrink-0 text-center">
-              {member.photo && (<div className="w-full relative overflow-hidden rounded-lg shadow-md">
+              {member.photo && (<div className="w-full relative overflow-hidden rounded-lg shadow-md" style={{ aspectRatio: '3 / 4' }}>
                 <Image
                   src={member.photo}
                   alt={member.name}
