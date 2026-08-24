@@ -8,10 +8,10 @@ import Image from 'next/image';
 import ButtonRound from './ButtonRound';
 import Link from 'next/link';
 
-const NavBar = () => {
+const NavBar = ({ className }) => {
   return (
     <div>
-      <DesktopNav />
+      <DesktopNav className={className} />
       <MobileNav />
     </div>
   )
@@ -40,12 +40,12 @@ function useScrollDirection() {
   return scrollDirection;
 };
 
-const DesktopNav = () => {
+const DesktopNav = ({ className }) => {
   const linkStyle = "afacad font-semibold text-[20px] text-base hover-text-accent rounded-full px-5 py-2";
   const scrollDirection = useScrollDirection();
 
   return (
-    <div className={`hidden fixed top-0 bg-base z-50 lg:flex w-full items-center justify-between pt-10 pb-5 pr-[5%] pl-[5%] transform transition-transform duration-500 ${scrollDirection === "down" ? "-translate-y-full" : "translate-y-0"}`}>
+    <div className={`hidden fixed top-0 z-50 lg:flex w-full items-center justify-between pt-10 pb-5 pr-[5%] pl-[5%] transform transition-transform duration-500 ${scrollDirection === "down" ? "-translate-y-full" : "translate-y-0"} ${className ? className : "bg-base"}`}>
       <Link href="/">
         <Image className="w-15 h-15" src={Logo} alt="Logo" />
       </Link>

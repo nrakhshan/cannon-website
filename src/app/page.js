@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="">
-      <NavBar />
+      <NavBar className={"bg-gradient-to-b from-black to-transparent"} />
       <Landing />
       <Footer />
     </div>
