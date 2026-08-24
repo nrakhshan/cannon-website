@@ -78,7 +78,7 @@ const MobileNav = () => {
 
   return (
     <div className='z-99 flex lg:hidden fixed w-[100%] items-center justify-between top-10 pr-[5%] pl-[5%]'>
-      <Link href="/" className='z-100' onClick={toggleMenu}>
+      <Link href="/" className='z-100'>
         <Image className="w-15 h-15" src={Logo} alt="Logo" />
       </Link>
       <Image className="z-50 w-15 h-15 cursor-pointer invert brightness-1" src={icon} alt="Menu" onClick={toggleMenu} />

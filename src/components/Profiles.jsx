@@ -9,7 +9,7 @@ const Profiles = () => {
       <div className="flex flex-wrap gap-20 justify-center items-start w-full lg:px-[6%] pt-24 px-[9%] text-[18px]">
         {members.map((member, index) => (
           <div key={index} className="w-full sm:w-1/3 md:w-1/4 lg:w-1/6 text-center">
-            <div className="w-full relative overflow-hidden rounded-lg shadow-md" style={{ aspectRatio: '3 / 4' }}>
+            {member.photo != null && (<div className="w-full relative overflow-hidden rounded-lg shadow-md" style={{ aspectRatio: '3 / 4' }}>
               <Image
                 src={member.photo}
                 alt={member.name}
@@ -17,10 +17,10 @@ const Profiles = () => {
                 className="object-cover"
                 priority={false}
               />
-            </div>
+            </div>)}
             <h2 className="afacad font-bold text-2xl mt-5">{member.name}</h2>
             <h3 className="afacad text-lg pb-5">{member.role}</h3>
-            <p className="cantata italic font-light">"{member.quote}"</p> 
+            <p className="cantata italic font-light text-sm whitespace-pre-line">"{member.quote}"</p>
             <p className='afacad mt-5'>- {member.speaker ? `${member.speaker}` : `${member.source}`}{member.source && member.speaker && `, (${member.source})`}</p>
           </div>
         ))}

@@ -26,7 +26,7 @@ const DesktopFooter = () => {
           </ul>
 
           <ul className="space-y-1 text-right">
-            <li><Link href="https://forms.gle/JHPj7FUeZwexAZwq8" target="_blank" rel="noopener noreferrer" className="hover:underline font-semibold">Join Us</Link></li>
+            <li><Link href="https://docs.google.com/forms/d/1hsw1ttCi_5jtz12LeeikYzfpFJJuLU6CFI7GDITlBWU/" target="_blank" rel="noopener noreferrer" className="hover:underline font-semibold">Join Us</Link></li>
             <li><Link href="https://github.com/nrakhshan/cannon-website" target="_blank" rel="noopener noreferrer" className="hover:underline font-semibold">Report an issue</Link></li>
 
             <div className="flex justify-end space-x-4 mt-14">
@@ -60,7 +60,7 @@ const MobileFooter = () => {
           <li><Link href="/about" className="hover:underline">About</Link></li>
           <li><Link href="/issues" className="hover:underline">Issues</Link></li>
           <li><Link href="/contact" className="hover:underline">Contact Us</Link></li>
-          <li><Link href="https://en.wikipedia.org/wiki/Seven-dimensional_cross_product" className="hover:underline">Join Us</Link></li>
+          <li><Link href="https://docs.google.com/forms/d/1hsw1ttCi_5jtz12LeeikYzfpFJJuLU6CFI7GDITlBWU/" className="hover:underline">Join Us</Link></li>
           <li><Link href="https://github.com/nrakhshan/cannon-website" className="hover:underline">Report an issue</Link></li>
         </ul>
 

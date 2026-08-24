@@ -1,18 +1,50 @@
 [
     {
-        "name": "Christina Pizzonia",
+        "name": "Vanessa Poiana",
         "role": "Editor-in-Chief",
-        "quote": "It was a time when the unthinkable became the thinkable and the impossible really happened.",
-        "speaker": "Arundhati Roy",
-        "source": "The God of Small Things",
-        "photo": "/members/christina-pizzonia.png"
+        "quote": "Who are you in the other hours?\nWhen your hair's undone and your guard's let down?\nWhen you're all alone in your all night gown?\nAre you the life of the party then?\nSitting by yourself, again,",
+        "speaker": "Harry Connick, Jr.",
+        "source": "The Other Hours",
+        "photo": "/members/vanessa-poiana.png"
+    },
+    {
+        "name": "Charlie Therence",
+        "role": "Managing Editor",
+        "quote": "",
+        "source": "",
+        "photo": null
+    },
+    {
+        "name": "Linden Zheng",
+        "role": "Creative Director",
+        "quote": "Did I understand it? Not by half, but when it thunders you know your chest is shaking.",
+        "speaker": "Leif Enger",
+        "source": "I Cheerfully Refuse",
+        "photo": "/members/linden-zheng.png"
+    },
+    {
+        "name": "Annika Lam",
+        "role": "Senior Editor",
+        "quote": "Life moves pretty fast. If you don't stop and look around once in a while, you could miss it.",
+        "speaker": "Ferris",
+        "source": "Ferris Bueller’s Day Off",
+        "photo": "/members/annika-lam.jpg"
     },
     {
         "name": "Juneeta Vangala",
         "role": "Senior Editor",
         "quote": "Seeking a great perhaps.",
+        "speaker": "John Green",
         "source": "Looking for Alaska",
         "photo": "/members/juneeta-vangala.jpg"
+    },
+    {
+        "name": "Leila Agil",
+        "role": "Senior Editor",
+        "quote": "You cannot take things that exist in the world and try to drive them back into the dream, to hold them inside the dream with walls and pretenses. That is insanity. What is, is.",
+        "speaker": "Ursula K. Le Guin",
+        "source": "The Word for World is Forest",
+        "photo": "/members/leila-agil.png"
     },
     {
         "name": "Justine Gaw",
@@ -23,6 +55,29 @@
         "photo": "/members/justine-gaw.jpg"
     },
     {
+        "name": "Omar Khan",
+        "role": "Junior Editor",
+        "quote": "I won't lose too much, just myself. There are always some things that are more important than others.",
+        "speaker": "Klein Moretti",
+        "source": "Lord of the Mysteries",
+        "photo": null
+    },
+    {
+        "name": "Ishita Jain",
+        "role": "Junior Editor",
+        "quote": "But thy eternal summer shall not fade, Nor lose possession of that fair thou ow’st; Nor shall death brag thou wander’st in his shade, When in eternal lines to time thou grow’st: So long as men can breathe or eyes can see, So long lives this, and this gives life to thee.",
+        "speaker": "William Shakespeare",
+        "source": "Sonnet 18",
+        "photo": "/members/ishita-jain.jpg"
+    },
+    {
+        "name": "Kelly Hong",
+        "role": "Junior Editor",
+        "quote": "You can't use up creativity. The more you use, the more you have.",
+        "speaker": "Maya Angelou",
+        "photo": "/members/kelly-hong.jpg"
+    },
+    {
         "name": "Meilly Chen",
         "role": "Staff Writer",
         "quote": "Is this some kind of twisted joke?!",
@@ -31,11 +86,51 @@
         "photo": "/members/meilly-chen.jpg"
     },
     {
+        "name": "Eva Deochakke",
+        "role": "Staff Writer",
+        "quote": "To live for the hope of it all,",
+        "speaker": "Taylor Swift",
+        "source": "August",
+        "photo": "/members/eva-deochakke.jpg"
+    },
+    {
+        "name": "Twisha Choudhary",
+        "role": "Staff Writer",
+        "quote": "I have hated words and I have loved them, and I hope I have made them right.",
+        "speaker": "Markus Zusak",
+        "source": "The Book Thief",
+        "photo": "/members/twisha-choudhary.jpg"
+    },
+    {
+        "name": "Priyanka Madu",
+        "role": "Staff Writer",
+        "quote": "As a child, I considered such unknowns sinister. Now, though, I understand they bear no ill will. The universe is, and we are.",
+        "speaker": "Solanum",
+        "source": "The Outer Wilds",
+        "photo": "/members/priyanka-madu.jpg"
+    },
+    {
         "name": "Joy Zhou",
         "role": "Staff Writer",
-        "quote": "two plus two make four",
+        "quote": "Two plus two make four.",
+        "speaker": "George Orwell",
         "source": "1984",
-        "photo": "/members/joy-zhou.PNG"
+        "photo": "/members/joy-zhou.png"
+    },
+    {
+        "name": "Aidy Zhang",
+        "role": "Graphic Designer",
+        "quote": "",
+        "source": "",
+        "photo": null
+    },
+    {
+        "name": "Coralyn Zhong",
+        "role": "Graphic Designer",
+        "quote": "One must imagine Sisyphus happy.",
+        "speaker": "Albert Camus",
+        "source": "The Myth of Sisyphus",
+        "photo": "/members/coralyn-zhong.jpg"
     },
     {
         "name": "Regina Jin",
@@ -45,18 +140,10 @@
         "photo": "/members/regina-jin.JPG"
     },
     {
-        "name": "Nusaiba Rakhshan",
-        "role": "Web Developer",
-        "quote": "A designer knows he has achieved perfection not when there is nothing left to add, but when there is nothing left to take away.",
-        "speaker": "Antoine de Saint-Exupéry",
-        "photo": "/members/nusaiba-rakhshan.JPG"
-    },
-    {
-        "name": "Linden Zheng",
-        "role": "Web Developer",
-        "quote": "Did I understand it? Not by half, but when it thunders you know your chest is shaking.",
-        "speaker": "Leif Enger",
-        "source": "I Cheerfully Refuse",
-        "photo": "/members/linden-zheng.jpeg"
+        "name": "Andy Derevyanko",
+        "role": "Social Media Manager",
+        "quote": "A picture is worth a thousand words.",
+        "speaker": "Frederick R. Barnard",
+        "photo": "/members/andy-derevyanko.jpg"
     }
 ]

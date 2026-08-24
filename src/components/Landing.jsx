@@ -3,6 +3,7 @@ import { React, useState, useEffect } from 'react'
 import { motion } from 'framer-motion';
 import issues from '../data/issues.json';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Landing = () => {
     return (
@@ -19,43 +20,17 @@ const Landing = () => {
             <motion.div
                 className="afacad text-[clamp(24px,3vw,40px)] font-bold leading-none text-left pl-2 lg:pl-5 w-[70%] m-auto mt-20 mb-10">
                 Read the latest issue
-                <img
-                    width="45px"
-                    height="45px"
-                    src="/assets/arrowright.svg"
-                    alt="Cover Image"
-                    className="inline ml-5 rotate-90 invert brightness-1"
-                />
-            </motion.div>
 
-            <div className="w-full overflow-x-hidden no-scrollbar mb-50">
-                <motion.div
-                    className='flex mt-20 px-10 gap-4'
-                    animate={{ x: ['-100px', `-${((420 + 4 * 4) * issues.length) + 100}px`] }}
-                    transition={{
-                        duration: 8 * issues.length,
-                        repeat: Infinity,
-                        ease: 'linear'
-                    }}
-                >
-                    {[...issues, ...issues].map((item, index) => (
-                        <motion.div
-                            key={index}
-                            className='flex-shrink-0'
-                        >
-                            <div className="relative overflow-hidden rounded-md w-[420px] h-[540px]">
-                                <Image
-                                    src={item.thumbnail}
-                                    alt="Cover Image"
-                                    fill
-                                    className="object-cover pointer-events-none"
-                                    draggable={false}
-                                />
-                            </div>
-                        </motion.div>
-                    ))}
-                </motion.div>
-            </div>
+                <Link href="/issues?issue=0&page=1" className='z-100'>
+                    <img
+                        width="45px"
+                        height="45px"
+                        src="/assets/arrowright.svg"
+                        alt="Cover Image"
+                        className="inline ml-5 rotate-90 invert brightness-1"
+                    />
+                </Link>
+            </motion.div>
         </div>
     )
 }
