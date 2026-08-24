@@ -46,7 +46,7 @@ const Landing = () => {
             </div>
             {hero && (<div className="absolute bottom-0 right-0 flex items-end justify-between p-3 afacad text-sm font-bold">
                 <span className="rounded-full text-primary px-1 py-1">
-                    Illustrated by {hero.credit}
+                    Illustration by {hero.credit}
                 </span>
             </div>)}
         </div>
