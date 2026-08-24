@@ -111,7 +111,7 @@ const Winners = () => {
                                         priority={false}
                                     />
                                 </div>)}
-                                <div className="cantata font-light text-sm whitespace-pre-line text-left" dangerouslySetInnerHTML={{ __html: submission.text }} />
+                                <div className="cantata font-light text-sm whitespace-pre-wrap text-left [&_p]:mb-3 [&_h2]:font-bold" dangerouslySetInnerHTML={{ __html: submission.text }} />
                             </div>
                         ))
                     )}
