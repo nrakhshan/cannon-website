@@ -43,6 +43,10 @@ body {
   color: var(--base);
 }
 
+.border-base {
+  color: var(--base);
+}
+
 .bg-base {
   background-color: var(--background);
 }

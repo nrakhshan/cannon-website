@@ -106,6 +106,13 @@ const DesktopPDFViewer = ({ issues, issue = 0, initialPage = 1, className = "" }
     }
   }
 
+  const copyLinkToPage = () => {
+    var link = `https://cannon.skule.ca/issues?issue=${issue}&page=${pageNumber}`;
+    navigator.clipboard.writeText(link);
+
+    alert("Copied to clipboard: " + link);
+  };
+
   return (
     <div ref={containerRef} className={`mt-20 relative w-[90%] mx-auto ${className}`}>
       <Document
@@ -145,6 +152,17 @@ const DesktopPDFViewer = ({ issues, issue = 0, initialPage = 1, className = "" }
               aria-label="previous page"
             >
               <img src="/assets/chevronleft.svg" alt="arrow left" className="w-5 h-5 pl-1 m-auto" draggable={false} />
+            </button>
+          </div>
+
+          <div className="absolute right-4 bottom-4 pointer-events-auto">
+            <button
+              onClick={copyLinkToPage}
+              className="cursor-pointer"
+              aria-label="share"
+              title="Share this page!"
+            >
+              <img className="w-6 h-6 m-auto" src={"/assets/share.svg"} alt="Share" />
             </button>
           </div>
 

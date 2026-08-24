@@ -86,18 +86,18 @@ const Grid = ({ issues, issue, setIssue, className }) => {
 
                             {/* Hover */}
                             <div className="absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition-all duration-200 group-hover:bg-black/60 group-hover:opacity-100">
-                                <h2 className="afacad text-2xl font-bold uppercase text-white">
+                                <h2 className="afacad text-2xl font-bold uppercase text-base">
                                     {issueItem.name}
                                 </h2>
 
                                 {/* Labels */}
                                 <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between p-3 afacad text-sm font-bold">
                                     <div className="flex">
-                                        <span className="rounded-full bg-white text-secondary px-3 py-1 uppercase">
+                                        <span className="rounded-full bg-invert text-secondary px-3 py-1 uppercase">
                                             {issueItem.quarter}
                                         </span>
 
-                                        <span className="border border-white bg-black rounded-full px-3 py-1">
+                                        <span className="border border-base bg-base rounded-full px-3 py-1">
                                             {issueItem.year}
                                         </span>
                                     </div>
@@ -130,7 +130,6 @@ const Grid = ({ issues, issue, setIssue, className }) => {
                     >
                         ✕
                     </button>
-
 
                     <PDFViewer issues={issues} issue={issue} initialPage={initialPage} />
                 </div>

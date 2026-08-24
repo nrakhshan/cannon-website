@@ -29,9 +29,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${poppins.variable} ${afacad.variable} ${cantataOne.variable}`}>
       <body className={`antialiased`}>
-        <PageTransition>
-          {children}
-        </PageTransition>
+        {/* <PageTransition> */}
+        {children}
+        {/* </PageTransition> */}
         {/* <Analytics /> */}
       </body>
     </html>

@@ -14,7 +14,7 @@ const Landing = () => {
                 src={hero.image}
                 alt={issues[0].name}
                 fill
-                className="object-cover opacity-70"
+                className="object-cover opacity-60"
                 draggable={false}
                 style={{ WebkitUserDrag: 'none' }}
                 priority={false}
