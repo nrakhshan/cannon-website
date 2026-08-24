@@ -52,6 +52,7 @@ const DesktopNav = ({ className }) => {
       <Link href="/" className={linkStyle}>Home</Link>
       <Link href="/about" className={linkStyle}>About</Link>
       <Link href="/issues" className={linkStyle}>Issues</Link>
+      <Link href="/creative-competition" className={linkStyle}>Creative Competition</Link>
       <Link href="/contact" className={linkStyle}>Contact Us</Link>
       <a href="https://forms.gle/ekY9KS5HYb2CHVTt9" target="_blank" rel="noopener noreferrer">
         <ButtonRound text="Subscribe" />
@@ -105,6 +106,7 @@ const MobileNav = () => {
           <Link href="/" className={menuitem} onClick={toggleMenu}>Home</Link>
           <Link href="/about" className={menuitem} onClick={toggleMenu}>About</Link>
           <Link href="/issues" className={menuitem} onClick={toggleMenu}>Issues</Link>
+          <Link href="/creative-competition" className={menuitem} onClick={toggleMenu}>Creative Competition</Link>
           <Link href="/contact" className={menuitem} onClick={toggleMenu}>Contact Us</Link>
           <Link href="/" className={menuitem} onClick={handleSubscribe}>Subscribe</Link>
           <div className='afacad bottom-[45px] absolute w-full text-center text-sm text-invert'>

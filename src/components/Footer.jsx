@@ -22,6 +22,7 @@ const DesktopFooter = () => {
             <li><Link href="/" className="hover:underline">Home</Link></li>
             <li><Link href="/about" className="hover:underline">About</Link></li>
             <li><Link href="/issues" className="hover:underline">Issues</Link></li>
+            <li><Link href="/creative-competition" className="hover:underline">Creative Competition</Link></li>
             <li><Link href="/contact" className="hover:underline">Contact Us</Link></li>
           </ul>
 
@@ -29,7 +30,7 @@ const DesktopFooter = () => {
             <li><Link href="https://docs.google.com/forms/d/1hsw1ttCi_5jtz12LeeikYzfpFJJuLU6CFI7GDITlBWU/" target="_blank" rel="noopener noreferrer" className="hover:underline font-semibold">Join Us</Link></li>
             <li><Link href="https://github.com/nrakhshan/cannon-website" target="_blank" rel="noopener noreferrer" className="hover:underline font-semibold">Report an issue</Link></li>
 
-            <div className="flex justify-end space-x-4 mt-14">
+            <div className="flex justify-end space-x-4 mt-21">
               <a href="https://www.instagram.com/thecannonuoft/" target="_blank" rel="noopener noreferrer"><FaInstagram className="w-6 h-6" /></a>
               <a href="mailto:cannon@skule.ca"><FaEnvelope className="w-6 h-6" /></a>
               <a href="https://discord.gg/FSwwhMqPPe" target="_blank" rel="noopener noreferrer"><FaDiscord className="w-7 h-7" /></a>
@@ -59,6 +60,7 @@ const MobileFooter = () => {
           <li><Link href="/" className="hover:underline">Home</Link></li>
           <li><Link href="/about" className="hover:underline">About</Link></li>
           <li><Link href="/issues" className="hover:underline">Issues</Link></li>
+          <li><Link href="/creative-competition" className="hover:underline">Creative Competition</Link></li>
           <li><Link href="/contact" className="hover:underline">Contact Us</Link></li>
           <li><Link href="https://docs.google.com/forms/d/1hsw1ttCi_5jtz12LeeikYzfpFJJuLU6CFI7GDITlBWU/" className="hover:underline">Join Us</Link></li>
           <li><Link href="https://github.com/nrakhshan/cannon-website" className="hover:underline">Report an issue</Link></li>

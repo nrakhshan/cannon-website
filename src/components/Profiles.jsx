@@ -84,7 +84,7 @@ const MobileProfiles = () => {
 
   return (
     <div className='flex lg:hidden'>
-      <div className="flex flex-wrap gap-7 justify-between items-center w-full lg:px-[6%] pt-24 px-[9%] text-[18px]">
+      <div className="flex flex-wrap gap-7 justify-end items-center w-full lg:px-[6%] pt-5 px-[9%] text-[18px]">
         <div className='flex invert brightness-1'>
           <button
             aria-label="scroll left"
@@ -105,7 +105,7 @@ const MobileProfiles = () => {
 
         <div
           ref={scrollerRef}
-          className="flex-grow flex pl-5 pr-5 flex-nowrap overflow-x-auto gap-20 justify-between items-start no-scrollbar cursor-grab"
+          className="flex-grow flex pl-5 pr-5 flex-nowrap overflow-x-auto gap-7 justify-between items-start no-scrollbar cursor-grab"
           style={{ touchAction: 'pan-y' }}
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
@@ -114,8 +114,8 @@ const MobileProfiles = () => {
           onPointerLeave={endDrag}
         >
           {members.map((member, index) => (
-            <div key={index} className="w-[230px] text-center">
-              {member.photo != null && (<div className="w-[230px] relative overflow-hidden rounded-lg shadow-md" style={{ aspectRatio: '3 / 4' }}>
+            <div key={index} className="w-[48%] md:w-[31%] shrink-0 text-center">
+              {member.photo && (<div className="w-full relative overflow-hidden rounded-lg shadow-md">
                 <Image
                   src={member.photo}
                   alt={member.name}
