@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-import { FaInstagram, FaTwitter, FaLinkedinIn, FaEnvelope, FaDiscord } from 'react-icons/fa';
+import { FaInstagram, FaTwitter, FaLinkedinIn, FaEnvelope, FaDiscord, FaSpotify } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -31,9 +31,9 @@ const DesktopFooter = () => {
             <li><Link href="https://github.com/nrakhshan/cannon-website" target="_blank" rel="noopener noreferrer" className="hover:underline font-semibold">Report an issue</Link></li>
 
             <div className="flex justify-end space-x-4 mt-21">
-              <a href="https://www.instagram.com/thecannonuoft/" target="_blank" rel="noopener noreferrer"><FaInstagram className="w-6 h-6" /></a>
+              <a href="https://instagram.com/thecannonuoft/" target="_blank" rel="noopener noreferrer"><FaInstagram className="w-6 h-6" /></a>
+              <a href="https://discord.gg/FSwwhMqPPe" target="_blank" rel="noopener noreferrer"><FaDiscord className="w-7 h-7 pb-1" /></a>
               <a href="mailto:cannon@skule.ca"><FaEnvelope className="w-6 h-6" /></a>
-              <a href="https://discord.gg/FSwwhMqPPe" target="_blank" rel="noopener noreferrer"><FaDiscord className="w-7 h-7" /></a>
             </div>
           </ul>
         </div>
@@ -52,9 +52,9 @@ const MobileFooter = () => {
       <footer className="w-full pt-9 pb-4 bg-base text-invert afacad">
         <ul className="space-y-1 text-center mb-15">
           <div className="flex justify-center space-x-4 mb-12">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram className="w-6 h-6" /></a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter className="w-6 h-6" /></a>
-            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn className="w-6 h-6" /></a>
+            <a href="https://instagram.com/thecannonuoft/" target="_blank" rel="noopener noreferrer"><FaInstagram className="w-6 h-6" /></a>
+            <a href="https://open.spotify.com/show/4gLMBJ36N0LvOWx89wDbnz?si=a7a6d9500e1e4c92" target="_blank" rel="noopener noreferrer"><FaSpotify className="w-6 h-6" /></a>
+            <a href="https://linkedin.com/company/the-cannon-uoft/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn className="w-6 h-6" /></a>
           </div>
 
           <li><Link href="/" className="hover:underline">Home</Link></li>
