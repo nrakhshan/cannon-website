@@ -5,41 +5,6 @@ import members from '../data/members.json'
 import Image from 'next/image'
 
 const Profiles = () => {
-  return (
-    <div>
-      <DesktopProfiles />
-      <MobileProfiles />
-    </div>
-  )
-}
-
-const DesktopProfiles = () => {
-  return (
-    <div className='hidden lg:flex'>
-      <div className="flex flex-wrap gap-7 justify-center items-start w-full lg:px-[6%] pt-24 px-[9%] text-[18px]">
-        {members.map((member, index) => (
-          <div key={index} className="w-full sm:w-1/3 md:w-1/4 lg:w-1/6 text-center">
-            {member.photo != null && (<div className="w-full relative overflow-hidden rounded-lg shadow-md" style={{ aspectRatio: '3 / 4' }}>
-              <Image
-                src={member.photo}
-                alt={member.name}
-                fill
-                className="object-cover"
-                priority={false}
-              />
-            </div>)}
-            <h2 className="afacad font-bold text-2xl mt-5">{member.name}</h2>
-            <h3 className="afacad text-lg pb-5">{member.role}</h3>
-            <p className="cantata italic font-light text-sm whitespace-pre-line">"{member.quote}"</p>
-            <p className='afacad mt-5'>- {member.speaker ? `${member.speaker}` : `${member.source}`}{member.source && member.speaker && `, (${member.source})`}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
-
-const MobileProfiles = () => {
   const scrollerRef = useRef(null);
   const isDown = useRef(false);
   const startX = useRef(0);
@@ -91,25 +56,15 @@ const MobileProfiles = () => {
   }
 
   return (
-    <div className='flex lg:hidden'>
-      <div className="flex flex-wrap gap-7 justify-end items-center w-full lg:px-[6%] pt-5 px-[9%] text-[18px]">
-        <div className='flex invert brightness-1'>
-          <button
-            aria-label="scroll left"
-            className="flex-shrink-0 cursor-pointer"
-            onClick={scrollLeft}
-          >
-            <img src="assets/arrowleft.svg" alt="Left Arrow" />
-          </button>
-
-          <button
-            aria-label="scroll right"
-            className="flex-shrink-0 cursor-pointer"
-            onClick={scrollRight}
-          >
-            <img src="assets/arrowright.svg" alt="Right Arrow" />
-          </button>
-        </div>
+    <div className=''>
+      <div className="flex gap-7 justify-between items-center w-full lg:px-[6%] pt-7 px-[9%] text-[18px]">
+        <button
+          aria-label="scroll left"
+          className="flex-shrink-0 cursor-pointer invert brightness-1"
+          onClick={scrollLeft}
+        >
+          <img src="assets/arrowleft.svg" alt="Left Arrow" />
+        </button>
 
         <div
           ref={scrollerRef}
@@ -122,7 +77,7 @@ const MobileProfiles = () => {
           onPointerLeave={endDrag}
         >
           {members.map((member, index) => (
-            <div key={index} className="w-[100%] md:w-[31%] shrink-0 snap-start text-center">
+            <div key={index} className="w-[100%] md:w-[31%] lg:w-[19%] shrink-0 snap-start text-center">
               {member.photo && (<div className="w-full relative overflow-hidden rounded-lg shadow-md" style={{ aspectRatio: '3 / 4' }}>
                 <Image
                   src={member.photo}
@@ -140,6 +95,14 @@ const MobileProfiles = () => {
               <p className='afacad mt-5'>- {member.speaker ? `${member.speaker}` : `${member.source}`}{member.source && member.speaker && `, (${member.source})`}</p>
             </div>))}
         </div>
+
+        <button
+          aria-label="scroll right"
+          className="flex-shrink-0 cursor-pointer invert brightness-1"
+          onClick={scrollRight}
+        >
+          <img src="assets/arrowright.svg" alt="Right Arrow" />
+        </button>
       </div>
     </div>
   )
