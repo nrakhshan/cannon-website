@@ -114,7 +114,7 @@ const DesktopPDFViewer = ({ issues, issue = 0, initialPage = 1, className = "" }
   };
 
   return (
-    <div ref={containerRef} className={`mt-20 relative w-[90%] mx-auto ${className}`}>
+    <div ref={containerRef} className={`mt-[5%] relative w-[90%] mx-auto ${className}`}>
       <Document
         className='bg-secondary rounded-lg flex justify-center'
         file={issues[issue].file}
