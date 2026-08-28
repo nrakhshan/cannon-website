@@ -10,15 +10,10 @@ export default function Competition() {
             <NavBar />
             <div className="mt-15 w-full lg:px-[6%] pt-24 px-[9%] text-[18px]">
                 <Title><p className="italic inline">The Cannon</p>'s Creative Competition</Title>
-                {/* Replace this text */}
-                {/* <p className="afacad mb-7"><i>The Cannon</i>, est. 1978, is the official magazine
-                    of <a href="https://skule.ca/" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">The University of Toronto Engineering Society</a> (EngSoc), publishing
-                    written and visual compositions from engineers across all disciplines,
-                    in all years – if you enjoy creating in any capacity, you’re always welcome
-                    to contribute! Issues range in length from 24-32 pages, and are published
-                    both in print and online, four times throughout the school year
-                    (in September, November, January and March).
-                </p> */}
+                <p className="afacad mb-7">Each issue, we invite all UofT Engineering students to submit original <b>photography</b>, <b>poetry</b>, and <b>short fiction</b> inspired by that issue’s theme. Prizes are awarded to the top three submissions in each category, plus a feature in The Cannon’s print edition! Details about upcoming competitions are shared on our Instagram and in the monthly EngSoc newsletter.
+                    <br /><br />
+                    Past winners and runners-up are available on this page.
+                </p>
             </div>
             <Winners />
             <Footer />

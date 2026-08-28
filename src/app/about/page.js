@@ -10,33 +10,17 @@ export default function About() {
       <NavBar />
       <div className="mt-15 w-full lg:px-[6%] pt-24 px-[9%] text-[18px]">
         <Title>About <p className="italic inline">The Cannon</p></Title>
-        <p className="afacad"><i>The Cannon</i>, est. 1978, is the official magazine
-          of <a href="https://skule.ca/" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">The University of Toronto Engineering Society</a> (EngSoc), publishing
-          written and visual compositions from engineers across all disciplines,
-          in all years – if you enjoy creating in any capacity, you’re always welcome
-          to contribute! Issues range in length from 24-32 pages, and are published
-          both in print and online, four times throughout the school year
-          (in September, November, January and March).
+        <p className="afacad"><i>The Cannon</i>, est. 1978, is the official arts and culture platform of the <a href="https://skule.ca/" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">University of Toronto Engineering Society</a> (EngSoc). We publish four themed magazine issues each year, both in print and online, which feature work from our staff writers alongside submissions from students at all stages of their engineering education at UofT. For our readers: you never quite know what you’ll get with each issue, so it’s always worth picking up the next copy!
           <br /><br />
-          Each issue has a distinct theme, selected by the Editor-in-Chief,
-          which gives each a unique feel. For our readers: you never quite
-          know what the next issue will look like, so it’s always worth it
-          to pick up the next copy!
+          Apart from the magazine, <i>The Cannon</i> now produces its own <a href="https://open.spotify.com/show/4gLMBJ36N0LvOWx89wDbnz" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">podcast</a>, creates video content, and hosts workshops and events for the Skule<div className="inline-block text-[10px] -translate-y-2">TM</div> community. We’re also looking beyond campus to engage more closely with Toronto’s arts and culture scene, covering local events and creating opportunities to spotlight Toronto-based artists. This year, (for the first time!) that includes accredited coverage of the Toronto International Film Festival. If there’s something creative that interests you, there’s probably a place for it here.
         </p>
 
         <Title className="mt-15">A Brief History</Title>
         <div className="lg:grid grid-cols-3 gap-7">
           <div className="afacad col-span-2">
-            <i>The Cannon</i> was originally started as a newspaper,
-            published monthly to inform the student body on happenings within the faculty.
-            Over the years, there became a growing need to publish not only facts but also
-            opinions, art and poetry. And thus, in 2022, as demand for an arts and culture
-            publication grew, <i>The Cannon</i>, as a magazine, was officially formed.
+            <i>The Cannon</i> was founded in 1978 as a monthly newspaper to inform the student body of happenings within the faculty. Over the years, its pages increasingly became a home not only for news, but also for opinion, art, poetry, and other creative work. <i>The Cannon</i> was reimagined as an arts and culture magazine in 2022, in response to a growing demand for a dedicated creative publication within Skule<div className="inline-block text-[10px] -translate-y-2">TM</div>.
             <br /><br />
-            In 2025, <i>The Cannon</i> was reformatted to include six distinct sections: Media & Culture,
-            Skule<div className="inline-block text-[10px] -translate-y-2">TM</div> Life, Science & Research, Humour & Comics, Poetry & Fiction and Puzzles & Games.
-            Regardless of what your interests are, or what kinds of content you enjoy creating (or consuming!),
-            there is a place for you to showcase your work (and explore others’ work!) here at <i>The Cannon</i>.
+            In 2026, <i>The Cannon</i> began its next chapter, expanding beyond its quarterly magazine into a broader arts and culture hub. We launched our podcast 'Echoes from The Cannon', introduced <i>The Cannon</i>’s Creative Competition, hosted workshops and community events, and started publishing more work outside the traditional print cycle.
             <br /><br />
             If you’re interested in learning more about our history, check out our page on <a href="https://skulepedia.ca/wiki/The_Cannon_(Magazine)" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">Skulepedia</a>,
             a wiki-based archive for all things engineering-related at UofT!
@@ -50,12 +34,7 @@ export default function About() {
 
         <Title className="mt-15">Meet the Team</Title>
         <p className="afacad"><i>The Cannon</i> is run by a small team of dedicated students
-          at the University of Toronto. It is comprised of three main branches:
-          the editorial team (responsible for reviewing and editing all written submissions),
-          the graphics team (responsible for most of the graphics you’ll see throughout the magazine,
-          including the front cover!) and the promotions team (responsible for this website,
-          our Instagram account @thecannonuoft, and distributing posters and printed copies of
-          the magazine across campus).
+          at the University of Toronto. There are plenty of ways to contribute, whether you’re interested in writing, editing, graphic design, photography, podcasting, video production, social media, web development, UX/UI, or event planning. No previous experience is required, and many of our roles are an opportunity to learn as you go.
           <br /><br />
           If you’d like to join our team (and meet some very talented people!),
           click the “Join Us” button below!

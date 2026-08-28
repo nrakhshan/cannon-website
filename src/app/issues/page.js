@@ -13,7 +13,7 @@ export default function Issues() {
     <div className="">
       <NavBar />
       <div className="mt-15 mb-2 w-full lg:px-[6%] pt-24 px-[9%] text-[18px]">
-        <Title>Issues</Title>
+        {/* <Title>Issues</Title> */}
       </div>
       <Grid issues={issues} issue={issue} setIssue={setIssue} />
       <Footer />

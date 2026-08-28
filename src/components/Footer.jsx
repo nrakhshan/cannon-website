@@ -53,7 +53,7 @@ const MobileFooter = () => {
         <ul className="space-y-1 text-center mb-15">
           <div className="flex justify-center space-x-4 mb-12">
             <a href="https://instagram.com/thecannonuoft/" target="_blank" rel="noopener noreferrer"><FaInstagram className="w-6 h-6" /></a>
-            <a href="https://open.spotify.com/show/4gLMBJ36N0LvOWx89wDbnz?si=a7a6d9500e1e4c92" target="_blank" rel="noopener noreferrer"><FaSpotify className="w-6 h-6" /></a>
+            <a href="https://open.spotify.com/show/4gLMBJ36N0LvOWx89wDbnz" target="_blank" rel="noopener noreferrer"><FaSpotify className="w-6 h-6" /></a>
             <a href="https://linkedin.com/company/the-cannon-uoft/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn className="w-6 h-6" /></a>
           </div>
 
