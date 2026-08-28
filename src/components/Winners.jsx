@@ -57,14 +57,14 @@ const Winners = () => {
 
     return (
         <div className='flex'>
-            <div className="flex flex-wrap gap-7 justify-between items-center w-full lg:px-[6%] px-[9%] text-[18px]">
+            <div className="flex flex-wrap gap-5 justify-between items-center w-full lg:pl-[6%] text-[18px]">
                 <div className='flex flex-wrap justify-between w-full gap-7'>
                     <div className="flex border-b border-secondary">
                         {competition.categories.map((category, index) => (
                             <button
                                 key={index}
                                 onClick={() => setSelectedCategory(index)}
-                                className={`afacad px-6 py-3 text-lg font-bold uppercase ${selectedCategory === index
+                                className={`afacad px-6 text-lg font-bold uppercase ${selectedCategory === index
                                     ? "border-b-2 border-secondary text-accent"
                                     : "opacity-50"
                                     }`}
@@ -104,9 +104,9 @@ const Winners = () => {
                 >
                     {competition.categories[selectedCategory]?.issues.map((issue) =>
                         issue.submissions.map((submission, index) => (
-                            <div key={index} className="w-full sm:w-[100%] md:w-[49%] lg:w-[32%] shrink-0 snap-start text-center items-center h-[800px] overflow-scroll">
-                                <h3 className="afacad font-semibold text-xl mb-3">{submission.award}</h3>
-                                <h2 className="afacad font-bold text-2xl mt-5 uppercase">{submission.title}</h2>
+                            <div key={index} className="w-full sm:w-[100%] md:w-[49%] lg:w-[100%] shrink-0 snap-start text-center items-center h-[70vh] overflow-scroll">
+                                <h3 className="afacad font-semibold text-xl">{submission.award}</h3>
+                                <h2 className="afacad font-bold text-2xl mt-3 uppercase">{submission.title}</h2>
                                 <h3 className="afacad text-lg pb-5">Submitted to <p className="italic inline">{issue.name}</p> by <strong>{submission.credit}</strong></h3>
                                 {submission.image && (<div className="w-[100%] relative overflow-hidden shadow-md mb-5" style={{ aspectRatio: '4 / 3' }}>
                                     <Image
