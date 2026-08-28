@@ -1,5 +1,5 @@
 import { Cantata_One, Afacad, Poppins } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next"
+// import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
 import PageTransition from "@/components/PageTransition";
 
@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
         {/* <PageTransition> */}
         {children}
         {/* </PageTransition> */}
-        <Analytics />
+        {/* <Analytics /> */}
       </body>
     </html>
   );
