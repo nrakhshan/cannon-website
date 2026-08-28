@@ -25,8 +25,9 @@ export default function About() {
             If you’re interested in learning more about our history, check out our page on <a href="https://skulepedia.ca/wiki/The_Cannon_(Magazine)" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">Skulepedia</a>,
             a wiki-based archive for all things engineering-related at UofT!
           </div>
-
-          <iframe className="hidden lg:flex w-fit" data-testid="embed-iframe" style={{ borderRadius: 12 + 'px' }} src="https://open.spotify.com/embed/show/4gLMBJ36N0LvOWx89wDbnz?utm_source=generator&theme=0&si=60a74368a8f14e5c" width="50%" height="352" border="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          <div className="w-full flex justify-center">
+            <iframe className="hidden lg:flex w-fit" data-testid="embed-iframe" style={{ borderRadius: 12 + 'px' }} src="https://open.spotify.com/embed/show/4gLMBJ36N0LvOWx89wDbnz?utm_source=generator&theme=0&si=60a74368a8f14e5c" width="50%" height="352" border="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
 
           {/* Mobile */}
           <iframe className="flex lg:hidden mt-7" data-testid="embed-iframe" style={{ borderRadius: 12 + 'px' }} src="https://open.spotify.com/embed/show/4gLMBJ36N0LvOWx89wDbnz?utm_source=generator&theme=0&si=60a74368a8f14e5c" width="100%" height="152" border="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>

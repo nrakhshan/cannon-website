@@ -45,15 +45,23 @@ const MobileProfiles = () => {
   const startX = useRef(0);
   const startScroll = useRef(0);
 
-  const scrollLeft = (el, amount = 300) => {
-    if (!el) return
-    el.scrollBy({ left: -amount, behavior: 'smooth' })
-  }
+  const scrollLeft = () => {
+    if (!scrollerRef.current) return;
 
-  const scrollRight = (el, amount = 300) => {
-    if (!el) return
-    el.scrollBy({ left: amount, behavior: 'smooth' })
-  }
+    scrollerRef.current.scrollBy({
+      left: -scrollerRef.current.clientWidth,
+      behavior: 'smooth',
+    });
+  };
+
+  const scrollRight = () => {
+    if (!scrollerRef.current) return;
+
+    scrollerRef.current.scrollBy({
+      left: scrollerRef.current.clientWidth,
+      behavior: 'smooth',
+    });
+  };
 
   const onPointerDown = (e) => {
     if (!scrollerRef.current) return;
@@ -89,7 +97,7 @@ const MobileProfiles = () => {
           <button
             aria-label="scroll left"
             className="flex-shrink-0 cursor-pointer"
-            onClick={() => scrollLeft(scrollerRef.current, 310)}
+            onClick={scrollLeft}
           >
             <img src="assets/arrowleft.svg" alt="Left Arrow" />
           </button>
@@ -97,7 +105,7 @@ const MobileProfiles = () => {
           <button
             aria-label="scroll right"
             className="flex-shrink-0 cursor-pointer"
-            onClick={() => scrollRight(scrollerRef.current, 310)}
+            onClick={scrollRight}
           >
             <img src="assets/arrowright.svg" alt="Right Arrow" />
           </button>
@@ -105,7 +113,7 @@ const MobileProfiles = () => {
 
         <div
           ref={scrollerRef}
-          className="flex-grow flex pl-5 pr-5 flex-nowrap overflow-x-auto gap-7 justify-between items-start no-scrollbar cursor-grab"
+          className="flex-grow flex pl-5 pr-5 flex-nowrap overflow-x-auto gap-5 justify-start items-start no-scrollbar cursor-grab snap-x snap-mandatory scroll-smooth"
           style={{ touchAction: 'pan-y' }}
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
@@ -114,7 +122,7 @@ const MobileProfiles = () => {
           onPointerLeave={endDrag}
         >
           {members.map((member, index) => (
-            <div key={index} className="w-[48%] md:w-[31%] shrink-0 text-center">
+            <div key={index} className="w-[100%] md:w-[31%] shrink-0 snap-start text-center">
               {member.photo && (<div className="w-full relative overflow-hidden rounded-lg shadow-md" style={{ aspectRatio: '3 / 4' }}>
                 <Image
                   src={member.photo}

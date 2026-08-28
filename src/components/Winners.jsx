@@ -10,15 +10,23 @@ const Winners = () => {
     const startX = useRef(0);
     const startScroll = useRef(0);
 
-    const scrollLeft = (el, amount = 300) => {
-        if (!el) return
-        el.scrollBy({ left: -amount, behavior: 'smooth' })
-    }
+    const scrollLeft = () => {
+        if (!scrollerRef.current) return;
 
-    const scrollRight = (el, amount = 300) => {
-        if (!el) return
-        el.scrollBy({ left: amount, behavior: 'smooth' })
-    }
+        scrollerRef.current.scrollBy({
+            left: -scrollerRef.current.clientWidth,
+            behavior: 'smooth',
+        });
+    };
+
+    const scrollRight = () => {
+        if (!scrollerRef.current) return;
+
+        scrollerRef.current.scrollBy({
+            left: scrollerRef.current.clientWidth,
+            behavior: 'smooth',
+        });
+    };
 
     const onPointerDown = (e) => {
         if (!scrollerRef.current) return;
@@ -69,7 +77,7 @@ const Winners = () => {
                         <button
                             aria-label="scroll left"
                             className="flex-shrink-0 cursor-pointer"
-                            onClick={() => scrollLeft(scrollerRef.current, 360)}
+                            onClick={scrollLeft}
                         >
                             <img src="assets/arrowleft.svg" alt="Left Arrow" />
                         </button>
@@ -77,7 +85,7 @@ const Winners = () => {
                         <button
                             aria-label="scroll right"
                             className="flex-shrink-0 cursor-pointer"
-                            onClick={() => scrollRight(scrollerRef.current, 360)}
+                            onClick={scrollRight}
                         >
                             <img src="assets/arrowright.svg" alt="Right Arrow" />
                         </button>
@@ -86,7 +94,7 @@ const Winners = () => {
 
                 <div
                     ref={scrollerRef}
-                    className="flex-grow flex pl-5 pr-5 flex-nowrap overflow-x-auto gap-5 justify-between items-start no-scrollbar cursor-grab"
+                    className="flex-grow flex pl-5 pr-5 flex-nowrap overflow-x-auto gap-5 justify-start items-start no-scrollbar cursor-grab snap-x snap-mandatory scroll-smooth"
                     style={{ touchAction: 'pan-y' }}
                     onPointerDown={onPointerDown}
                     onPointerMove={onPointerMove}
@@ -96,7 +104,7 @@ const Winners = () => {
                 >
                     {competition.categories[selectedCategory]?.issues.map((issue) =>
                         issue.submissions.map((submission, index) => (
-                            <div key={index} className="w-full sm:w-[100%] md:w-[49%] lg:w-[32%] shrink-0 text-center items-center h-[800px] overflow-scroll">
+                            <div key={index} className="w-full sm:w-[100%] md:w-[49%] lg:w-[32%] shrink-0 snap-start text-center items-center h-[800px] overflow-scroll">
                                 <h3 className="afacad font-semibold text-xl mb-3">{submission.award}</h3>
                                 <h2 className="afacad font-bold text-2xl mt-5 uppercase">{submission.title}</h2>
                                 <h3 className="afacad text-lg pb-5">Submitted to <p className="italic inline">{issue.name}</p> by <strong>{submission.credit}</strong></h3>
