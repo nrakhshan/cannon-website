@@ -1,7 +1,6 @@
 import { Cantata_One, Afacad, Poppins } from "next/font/google";
-// import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
-import PageTransition from "@/components/PageTransition";
 
 const cantataOne = Cantata_One({
   variable: "--font-cantata-one",
@@ -29,10 +28,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${poppins.variable} ${afacad.variable} ${cantataOne.variable}`}>
       <body className={`antialiased`}>
-        {/* <PageTransition> */}
         {children}
-        {/* </PageTransition> */}
-        {/* <Analytics /> */}
+        <Analytics />
       </body>
     </html>
   );
