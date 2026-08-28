@@ -4,7 +4,7 @@ import NavBar from "@/components/NavBar";
 import issues from '../../data/issues.json'
 import Grid from "@/components/Grid";
 import Title from "@/components/Title";
-import React, { useState } from 'react'
+import React, { Suspense, useState } from 'react';
 
 export default function Issues() {
   const [issue, setIssue] = useState(0);
@@ -15,7 +15,9 @@ export default function Issues() {
       <div className="mt-15 mb-2 w-full lg:px-[6%] pt-24 px-[9%] text-[18px]">
         {/* <Title>Issues</Title> */}
       </div>
-      <Grid issues={issues} issue={issue} setIssue={setIssue} />
+      <Suspense fallback={<div className="flex justify-center py-20">Loading...</div>}>
+        <Grid issues={issues} issue={issue} setIssue={setIssue} />
+      </Suspense>
       <Footer />
     </div>
   );
