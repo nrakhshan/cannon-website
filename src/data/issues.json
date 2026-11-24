@@ -1,5 +1,18 @@
 [
     {
+        "name": "Spellbound",
+        "volume": "XLIX",
+        "quarter": "Fall",
+        "year": "2T6",
+        "file": "/issues/2t6-november.pdf",
+        "thumbnail": "/thumbnails/spellbound.png",
+        "hero": {
+            "image": "/heroes/spellbound.png",
+            "credit": "Linden Zheng"
+        },
+        "doublepage": false
+    },
+    {
         "name": "After Hours",
         "volume": "XLIX",
         "quarter": "Summer",
